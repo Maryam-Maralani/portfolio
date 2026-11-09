@@ -1031,7 +1031,7 @@ button { font: inherit; color: inherit; }
   border: 1px solid var(--line);
   background: var(--white);
 }
-.shot__frame.is-winner { border-color: var(--accent); }
+.shot__frame.is-winner { border: 2px solid var(--accent); }  /* one "winner" style: 2px burgundy, same as the Test 2 output and the LoRA card */
 .shot__frame img { width: 100%; }
 .shot__split {
   position: absolute;
