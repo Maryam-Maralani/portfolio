@@ -158,7 +158,7 @@ var MM = {
   var hero = document.querySelector('main > section, main > div');
   var foot = document.querySelector('.site-footer');
   var M = 12;
-  var side = 'right', yFrac = 0.72;
+  var side = 'right', yFrac = 0.4;
   function size() { return fab.offsetWidth || 60; }
   function vw() { return document.documentElement.clientWidth; }
   function vh() { return window.innerHeight; }
