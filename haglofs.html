@@ -67,46 +67,26 @@
       </div>
     </section>
 
-    <!-- 01 Overview -->
-    <section class="section section--grey" aria-labelledby="h-overview">
+    <!-- 01 Key decisions: the skim layer -->
+    <section class="section section--grey" aria-labelledby="h-decisions">
       <div class="container" data-reveal>
         <div class="section-head">
-          <p class="section-label t-label"><span>Overview</span></p>
-          <h2 class="t-h2" id="h-overview">The challenge</h2>
-          <p class="t-body-l" style="max-width:650px">Haglöfs asked how AI could make its product pages feel premium and produce content at scale. We reframed the brief around what they already had: their existing product photography, with no reshoots. That split the work into two questions.</p>
+          <p class="section-label t-label"><span>My decisions</span></p>
+          <h2 class="t-h2" id="h-decisions">Four decisions I made, and why.</h2>
+          <p class="t-body-l" style="max-width:820px">Haglöfs asked how AI could make its product pages feel premium. My teammates researched which AI model to use. My part was where AI imagery goes on the page, and how to show it honestly. I was also the team’s main contact with Haglöfs.</p>
         </div>
-        <h3 class="t-label accent">Two questions, one team</h3>
-        <div class="grid grid--2" style="margin-top:20px">
-          <div class="card card--roomy"><p class="t-label accent">Question 1 · The team</p><p class="t-h6">Which AI, and what should it generate?</p><p class="muted">Which AI approach could make existing photos feel premium, consistently and affordably? My teammates researched and tested it.</p></div>
-          <div class="card card--roomy"><p class="t-label accent">Question 2 · My focus</p><p class="t-h6">Where should AI imagery live on the page?</p><p class="muted">Where on the product page should AI imagery appear, and how should it be shown so it never misleads? This was my part.</p></div>
-        </div>
+        <ol class="grid grid--2 decisions">
+          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">01</p><h3 class="t-h6">Focus on the product page</h3><p class="t-small"><strong>Why:</strong> Haglöfs asked for it, and one page tested properly beats many pages sketched quickly.</p></li>
+          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">02</p><h3 class="t-h6">Progressive disclosure over campaign storytelling</h3><p class="t-small"><strong>Why:</strong> In eight test sessions, most people preferred it for scanning and faster access to specs.</p></li>
+          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">03</p><h3 class="t-h6">Specs as icons, details on demand</h3><p class="t-small"><strong>Why:</strong> Testers found icons faster to scan than the long “Detaljer” text.</p></li>
+          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">04</p><h3 class="t-h6">AI label on the image itself</h3><p class="t-small"><strong>Why:</strong> The EU AI Act asks for clear labels from the first view, and WCAG says never rely on colour alone.</p></li>
+        </ol>
+        <p class="t-label muted decisions__next"><span aria-hidden="true">↓  </span>The full process: research, two directions, testing and the final design</p>
       </div>
     </section>
 
-    <!-- 02 My contribution -->
-    <section class="section section--light" aria-labelledby="h-contrib">
-      <div class="container" data-reveal>
-        <div class="section-head">
-          <p class="section-label t-label"><span>My contribution</span></p>
-          <h2 class="t-h2" id="h-contrib">Where I made the difference</h2>
-        </div>
-        <div class="contrib-h">
-        <ul class="grid grid--2 contrib-h__cards">
-          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">01</p><h3 class="t-h6">UI/UX design</h3><p class="t-small muted">Two product-page directions for desktop and mobile, including the icon summary and material close-ups.</p></li>
-          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">02</p><h3 class="t-h6">User testing</h3><p class="t-small muted">Moderated eight sessions. The findings chose the final design.</p></li>
-          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">03</p><h3 class="t-h6">Responsible AI</h3><p class="t-small muted">Turned EU and Swedish rules into a visible AI label.</p></li>
-          <li class="card card--roomy"><p class="t-label accent" aria-hidden="true">04</p><h3 class="t-h6">Stakeholder management</h3><p class="t-small muted">Main contact with Haglöfs. Kept the team aligned and narrowed the scope to the product page.</p></li>
-        </ul>
-        <figure class="print contrib-h__photo">
-          <div class="print__paper"><img src="images/haglofs/team-photo-744.webp" srcset="images/haglofs/team-photo-400.webp 400w, images/haglofs/team-photo-744.webp 744w" sizes="(min-width: 1024px) 372px, calc(100vw - 64px)" alt="The project team working on laptops on a green sofa and floor cushions" width="744" height="558" loading="lazy"></div>
-          <figcaption class="t-small muted">Our team, working through the Haglöfs brief.</figcaption>
-        </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 From research to design -->
-    <section class="section section--grey fit" aria-labelledby="h-research">
+    <!-- 02 Deep dive: research -->
+    <section class="section section--light fit" aria-labelledby="h-research">
       <div class="container" data-reveal>
         <div class="section-head">
           <p class="section-label t-label"><span>From research to design</span></p>
@@ -130,55 +110,13 @@
       </div>
     </section>
 
-    <!-- 04 Question 1 -->
-    <section class="section section--light q1" aria-labelledby="h-q1">
-      <div class="container" data-reveal>
-        <div class="section-head">
-          <p class="section-label t-label"><span>Question 1 · The team</span></p>
-          <h2 class="t-h2 measure-l" id="h-q1">A custom-trained model,<br> not an off-the-shelf tool.</h2>
-        </div>
-        <ul class="options q1-options">
-          <li class="card"><div class="option__top"><h3 class="option__name t-label muted">General AI tools</h3></div><p class="option__cost t-h6 muted">&lt; 1K SEK</p><p class="t-small muted">Fast to start, but generic-looking output.</p></li>
-          <li class="card"><div class="option__top"><h3 class="option__name t-label muted">AI photo platforms</h3></div><p class="option__cost t-h6 muted">~200–800 SEK / month</p><p class="t-small muted">Off the shelf, with the same generic-output risk.</p></li>
-          <li class="card is-pick"><div class="option__top"><h3 class="option__name t-label">Custom LoRA</h3><span class="tag t-label">Recommended</span></div><p class="option__cost t-h6">15K–300K+ SEK</p><p class="t-small muted">Learns Haglöfs’ own look and keeps it consistent.</p></li>
-          <li class="card"><div class="option__top"><h3 class="option__name t-label muted">Model from scratch</h3></div><p class="option__cost t-h6 muted">Millions of SEK</p><p class="t-small muted">Most control, but the highest cost and longest wait.</p></li>
-        </ul>
-        <div class="cols-3 q1-block">
-          <div class="open-col"><h3 class="t-label accent">What a LoRA is</h3><p>A small trained layer on top of an existing image model that teaches it one consistent Haglöfs look.</p></div>
-          <div class="open-col"><h3 class="t-label accent">What testing showed</h3><p>A few consistent training images beat many inconsistent ones.</p></div>
-          <div class="open-col"><h3 class="t-label accent">The recommendation</h3><p>A 2–6 week pilot (15–50K SEK) on products that are already released.</p></div>
-        </div>
-        <h3 class="t-label accent q1-block">Training results</h3>
-        <div class="tests" style="margin-top:24px">
-          <figure class="test">
-            <h4 class="t-label accent">Test 1 · 12 mixed training pairs</h4>
-            <div class="pair">
-              <img src="images/haglofs/lora-input-480.webp" srcset="images/haglofs/lora-input-240.webp 240w, images/haglofs/lora-input-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 1 input: the original backpack product photo" loading="lazy">
-              <span class="pair__arrow" aria-hidden="true">→</span>
-              <img src="images/haglofs/lora-output-1-480.webp" srcset="images/haglofs/lora-output-1-240.webp 240w, images/haglofs/lora-output-1-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 1 output: the AI-generated backpack, cropped tighter with smoother fabric" loading="lazy">
-            </div>
-            <figcaption class="t-small">Same backpack, trained on images from mixed sources. It came back cropped too tight, with the fabric texture smoothed away.</figcaption>
-          </figure>
-          <figure class="test">
-            <h4 class="t-label accent">Test 2 · 3 consistent training pairs</h4>
-            <div class="pair">
-              <img src="images/haglofs/lora-input-480.webp" srcset="images/haglofs/lora-input-240.webp 240w, images/haglofs/lora-input-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 2 input: the same original backpack product photo" loading="lazy">
-              <span class="pair__arrow" aria-hidden="true">→</span>
-              <img class="is-best" src="images/haglofs/lora-output-2-480.webp" srcset="images/haglofs/lora-output-2-240.webp 240w, images/haglofs/lora-output-2-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 2 output: the AI-generated backpack with consistent lighting and composition" loading="lazy">
-            </div>
-            <figcaption class="t-small">Fewer images, all with the same look. Lighting and composition became consistent.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- 05 Question 2 -->
     <section class="section section--grey" aria-labelledby="h-q2">
       <div class="container" data-reveal>
         <div class="section-head">
-          <p class="section-label t-label"><span>Question 2 · My focus</span></p>
+          <p class="section-label t-label"><span>Two directions</span></p>
           <h2 class="t-h2 measure-l" id="h-q2">Where should AI imagery<br> go on the page?</h2>
-          <p class="t-body-l" style="max-width:850px">This was my part. I studied how outdoor brands use imagery on their product pages, then designed two directions to test. I also generated the material close-ups myself with AI, to show details a normal photo can’t, like the down inside the jacket.</p>
+          <p class="t-body-l" style="max-width:850px">I studied how outdoor brands use imagery on their product pages, then designed two directions to test. I also generated the material close-ups myself with AI, to show details a normal photo can’t, like the down inside the jacket.</p>
         </div>
         <h3 class="t-label accent">Two inspirations, two directions</h3>
         <p class="t-body-m" style="margin-top:18px">Two brands from my UI/UX review became the two directions:</p>
@@ -292,6 +230,53 @@
           <p class="t-body-l">Familiar shopping patterns, a clearer hierarchy, visible material proof and transparent AI imagery, tested with eight users and designed for desktop and mobile. We shared it with the Haglöfs team in feedback sessions at their office, and they found the work very solid.</p>
           <p class="outcome__learned t-body-m"><strong>What I learned</strong><span>Law can be a design constraint: the AI label is the regulation made visible. Next time, I’d test with people closer to Haglöfs’ real customers.</span></p>
         </div>
+      </div>
+    </section>
+
+    <!-- 09 Team context, folded -->
+    <section class="section section--light q1" aria-labelledby="h-team">
+      <div class="container">
+        <details class="team-fold">
+          <summary class="team-fold__summary"><span><span class="section-label t-label"><span>Team context</span></span><span class="t-h5" id="h-team">How the team chose the AI model</span><span class="t-small muted">My teammates’ research: a custom-trained LoRA, not an off-the-shelf tool.</span></span><span class="team-fold__icon" aria-hidden="true"></span></summary>
+          <div class="team-fold__body">
+        <ul class="options q1-options" style="margin-top:0">
+          <li class="card"><div class="option__top"><h3 class="option__name t-label muted">General AI tools</h3></div><p class="option__cost t-h6 muted">&lt; 1K SEK</p><p class="t-small muted">Fast to start, but generic-looking output.</p></li>
+          <li class="card"><div class="option__top"><h3 class="option__name t-label muted">AI photo platforms</h3></div><p class="option__cost t-h6 muted">~200–800 SEK / month</p><p class="t-small muted">Off the shelf, with the same generic-output risk.</p></li>
+          <li class="card is-pick"><div class="option__top"><h3 class="option__name t-label">Custom LoRA</h3><span class="tag t-label">Recommended</span></div><p class="option__cost t-h6">15K–300K+ SEK</p><p class="t-small muted">Learns Haglöfs’ own look and keeps it consistent.</p></li>
+          <li class="card"><div class="option__top"><h3 class="option__name t-label muted">Model from scratch</h3></div><p class="option__cost t-h6 muted">Millions of SEK</p><p class="t-small muted">Most control, but the highest cost and longest wait.</p></li>
+        </ul>
+        <div class="cols-3 q1-block">
+          <div class="open-col"><h3 class="t-label accent">What a LoRA is</h3><p>A small trained layer on top of an existing image model that teaches it one consistent Haglöfs look.</p></div>
+          <div class="open-col"><h3 class="t-label accent">What testing showed</h3><p>A few consistent training images beat many inconsistent ones.</p></div>
+          <div class="open-col"><h3 class="t-label accent">The recommendation</h3><p>A 2–6 week pilot (15–50K SEK) on products that are already released.</p></div>
+        </div>
+        <h3 class="t-label accent q1-block">Training results</h3>
+        <div class="tests" style="margin-top:24px">
+          <figure class="test">
+            <h4 class="t-label accent">Test 1 · 12 mixed training pairs</h4>
+            <div class="pair">
+              <img src="images/haglofs/lora-input-480.webp" srcset="images/haglofs/lora-input-240.webp 240w, images/haglofs/lora-input-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 1 input: the original backpack product photo" loading="lazy">
+              <span class="pair__arrow" aria-hidden="true">→</span>
+              <img src="images/haglofs/lora-output-1-480.webp" srcset="images/haglofs/lora-output-1-240.webp 240w, images/haglofs/lora-output-1-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 1 output: the AI-generated backpack, cropped tighter with smoother fabric" loading="lazy">
+            </div>
+            <figcaption class="t-small">Same backpack, trained on images from mixed sources. It came back cropped too tight, with the fabric texture smoothed away.</figcaption>
+          </figure>
+          <figure class="test">
+            <h4 class="t-label accent">Test 2 · 3 consistent training pairs</h4>
+            <div class="pair">
+              <img src="images/haglofs/lora-input-480.webp" srcset="images/haglofs/lora-input-240.webp 240w, images/haglofs/lora-input-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 2 input: the same original backpack product photo" loading="lazy">
+              <span class="pair__arrow" aria-hidden="true">→</span>
+              <img class="is-best" src="images/haglofs/lora-output-2-480.webp" srcset="images/haglofs/lora-output-2-240.webp 240w, images/haglofs/lora-output-2-480.webp 480w" sizes="(min-width: 1024px) 240px, 42vw" width="480" height="600" alt="Test 2 output: the AI-generated backpack with consistent lighting and composition" loading="lazy">
+            </div>
+            <figcaption class="t-small">Fewer images, all with the same look. Lighting and composition became consistent.</figcaption>
+          </figure>
+        </div>
+        <figure class="print team-fold__photo">
+          <div class="print__paper"><img src="images/haglofs/team-photo-744.webp" srcset="images/haglofs/team-photo-400.webp 400w, images/haglofs/team-photo-744.webp 744w" sizes="(min-width: 1024px) 372px, calc(100vw - 64px)" alt="The project team working on laptops on a green sofa and floor cushions" width="744" height="558" loading="lazy"></div>
+          <figcaption class="t-small muted">Our team, working through the Haglöfs brief.</figcaption>
+        </figure>
+          </div>
+        </details>
       </div>
     </section>
   </main>

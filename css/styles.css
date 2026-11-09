@@ -989,6 +989,28 @@ button { font: inherit; color: inherit; }
   .print figcaption { margin-top: 24px; }
 }
 
+/* Haglöfs: four key decisions (the skim layer) */
+.decisions { gap: 18px; }
+.decisions .card > * + * { margin-top: 12px; }
+.decisions strong { font-weight: 600; color: var(--ink); }
+.decisions__next { margin-top: 32px; }
+@media (min-width: 1024px) { .decisions .card { min-height: 170px; } }
+
+/* Haglöfs: teammates' model research, folded at the end */
+.team-fold { border: 1px solid var(--line); border-radius: var(--r-card); background: var(--white); }
+.team-fold__summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px; cursor: pointer; list-style: none; }
+.team-fold__summary::-webkit-details-marker { display: none; }
+.team-fold__summary > span:first-child { display: grid; gap: 8px; }
+.team-fold__summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: inherit; }
+.team-fold__icon { flex: none; position: relative; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; }
+.team-fold__icon::before, .team-fold__icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 14px; height: 1.5px; background: var(--accent); transform: translate(-50%, -50%); transition: transform .3s var(--ease); }
+.team-fold__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.team-fold[open] .team-fold__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.team-fold__summary:hover .team-fold__icon { border-color: var(--accent); }
+.team-fold__body { padding: 0 24px 32px; border-top: 1px solid var(--line); padding-top: 32px; }
+.team-fold__photo { margin-top: 48px; max-width: 396px; }
+@media (min-width: 1024px) { .team-fold__summary { padding: 32px 36px; } .team-fold__body { padding: 40px 36px 48px; } }
+
 /* MyMaria: accessibility & inclusion, inside Testing & iteration */
 .a11y-block { margin-top: 48px; }
 .a11y-block > .section-label + * { margin-top: 24px; }
