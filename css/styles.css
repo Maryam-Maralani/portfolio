@@ -1569,8 +1569,17 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .js-anim [data-hand] .hand-note__arrow path { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .js-anim [data-hand].is-in .hand-note__arrow path:first-child { stroke-dashoffset: 0; transition: stroke-dashoffset .45s ease-in-out 1s; }
 .js-anim [data-hand].is-in .hand-note__arrow path:last-child { stroke-dashoffset: 0; transition: stroke-dashoffset .15s ease-out 1.45s; }
+/* Three small "shine" strokes beside the whimsical note. Deliberately not the four-point
+   sparkle, which on this site only ever means "AI-generated". Drawn once after the text. */
+.hand__shine { display: inline-block; width: .95em; height: .95em; margin-left: .04em; vertical-align: .4em; overflow: visible;
+  fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.js-anim [data-hand] .hand__shine path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js-anim [data-hand].is-in .hand__shine path { stroke-dashoffset: 0; transition: stroke-dashoffset .18s ease-out 1s; }
+.js-anim [data-hand].is-in .hand__shine path:nth-child(2) { transition-delay: 1.12s; }
+.js-anim [data-hand].is-in .hand__shine path:nth-child(3) { transition-delay: 1.24s; }
 @media (prefers-reduced-motion: reduce) {
   .js-anim [data-hand] .hand__ink { clip-path: none !important; }
+  .js-anim [data-hand] .hand__shine path { stroke-dashoffset: 0 !important; }
   .js-anim [data-hand] .hand-note__arrow path,
   .js-anim .loop__return[data-draw] path { stroke-dashoffset: 0 !important; }
   .js-anim .loop__return[data-draw] .loop__note { opacity: 1 !important; }
