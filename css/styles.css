@@ -319,6 +319,12 @@ button { font: inherit; color: inherit; }
 }
 .quote-card blockquote { font-weight: 500; }
 .quote-card figcaption { color: var(--accent); }
+/* Speech bubble: the same card with a small tail at the bottom left */
+.quote-card--bubble { position: relative; margin-bottom: 16px; }
+.quote-card--bubble::before,
+.quote-card--bubble::after { content: ""; position: absolute; clip-path: polygon(0 0, 100% 0, 0 100%); }
+.quote-card--bubble::before { left: 31px; top: 100%; width: 24px; height: 17px; background: var(--line); }
+.quote-card--bubble::after { left: 32px; top: calc(100% - 1px); width: 22px; height: 15px; background: var(--white); }
 
 /* Numbered burgundy marker (1–7) */
 .marker {
@@ -503,10 +509,7 @@ button { font: inherit; color: inherit; }
   color: var(--bg);
   padding-block: 56px 40px;
 }
-.site-footer .section-label { color: var(--bg); }
-.site-footer .section-label__num { color: var(--bg); }
 .site-footer__headline {
-  margin-top: 40px;
   font-size: clamp(44px, 5.56vw, 80px);
   font-weight: 500;
   line-height: 1.03;
@@ -514,11 +517,31 @@ button { font: inherit; color: inherit; }
   color: var(--bg);
 }
 .site-footer__headline em { font-style: normal; color: var(--accent-on-dark); }
+
+/* Hand-drawn coffee cup after "love." with steam that rises and fades.
+   Phones: the cup sits under the headline. Static with reduced motion. */
+.fika { display: block; width: 48px; height: 72px; margin-top: 20px; }
+.fika svg { width: 100%; height: 100%; overflow: visible; }
+.fika path { fill: none; stroke: var(--accent-on-dark); stroke-linecap: round; stroke-linejoin: round; }
+.fika__cup path { stroke-width: 2.67; }
+.fika__steam path { stroke-width: 1.6; animation: steam 2.8s ease-in-out infinite; opacity: 0; }
+.fika__steam path:nth-child(2) { animation-delay: .9s; }
+.fika__steam path:nth-child(3) { animation-delay: 1.8s; }
+@keyframes steam {
+  0%   { opacity: 0; transform: translateY(6px); }
+  35%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+@media (min-width: 768px) {
+  .fika { position: relative; display: inline-block; width: .8em; height: .6em; margin-left: .1em; vertical-align: baseline; }
+  .fika svg { position: absolute; left: 0; bottom: -.395em; width: .8em; height: 1.2em; }  /* cup bottom sits just under the baseline, as in Figma */
+}
 .site-footer__text {
   margin-top: 32px;
   max-width: 610px;
   font-size: var(--t-body-l);
   line-height: 1.55;
+  color: var(--silver);
 }
 .site-footer__row {
   display: flex;
@@ -556,11 +579,10 @@ button { font: inherit; color: inherit; }
   padding-top: 24px;
   border-top: 1px solid #38393D;
 }
-.site-footer__note { color: #B9BBBE; }  /* footer keeps its original graphite palette */
+.site-footer__bottom { color: var(--silver); }
 
 @media (min-width: 1024px) {
-  .site-footer { padding-block: 70px 40px; }
-  .site-footer__headline { margin-top: 48px; }
+  .site-footer { padding-block: 135px 40px; }
   .site-footer__row { flex-direction: row; justify-content: space-between; align-items: flex-end; margin-top: 40px; }
   .site-footer__bottom { flex-direction: row; justify-content: space-between; margin-top: 56px; }
 }
@@ -652,7 +674,7 @@ button { font: inherit; color: inherit; }
   letter-spacing: -.025em;
 }
 .typer__text { white-space: nowrap; }
-.typer__word { color: var(--accent); }
+.typer__word { color: var(--ink); }
 .typer__caret {
   display: inline-block;
   width: 2px;
@@ -711,11 +733,53 @@ button { font: inherit; color: inherit; }
   .home-hero__lead { display: contents; }
 }
 
-/* What I bring */
-.bring-card { min-height: 100%; }
-@media (min-width: 1024px) {
-  .bring-card { min-height: 256px; }
+/* How I work: four steps in a loop, with a hand-drawn arrow back to the start */
+.how__title + * { margin-top: 32px; }
+.loop__steps { display: grid; gap: 28px; counter-reset: step; }
+.loop__step { position: relative; padding: 24px 22px; }
+@media (min-width: 1024px) { .loop__step { min-height: 190px; } }
+.loop__step > * + * { margin-top: 14px; }
+.loop__step .t-h4 { padding-right: 44px; }
+.loop__icon {
+  position: absolute; top: 20px; right: 22px;
+  width: 34px; height: 34px;
+  fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
 }
+.loop__icon--thin { stroke-width: 1.6; }
+/* The → between steps (↓ on phones) */
+.loop__step + .loop__step::before {
+  content: "↓";
+  position: absolute; left: 50%; top: -26px; transform: translateX(-50%);
+  font-size: 24px; font-weight: 500; line-height: 1; color: var(--accent);
+}
+.loop__return { position: relative; margin-top: 12px; text-align: center; }
+.loop__arrow { display: none; }
+.loop__note { color: var(--accent); }
+.hand { font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive; font-size: 26px; font-weight: 400; line-height: 1.25; }
+.loop__note::before { content: "↺ "; font-family: var(--font); font-size: 20px; }
+
+@media (min-width: 1024px) {
+  .how { min-height: 800px; display: flex; align-items: center; }
+  .how > .container { width: min(100% - 2 * var(--gutter), 1328px); }
+  .how__title + * { margin-top: 34px; }
+  .loop__steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px; }
+  .loop__step + .loop__step::before { content: "→"; left: -32px; top: 50%; transform: translateY(-50%); }
+  .loop__return { height: 96px; margin-top: 8px; }
+  .loop__arrow { display: block; position: absolute; left: 5.6%; top: 0; width: 88.9%; height: 70px; overflow: visible; }
+  .loop__arrow path { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .loop__dash { stroke-dasharray: 6 7; }
+  .loop__reveal { stroke: #fff !important; stroke-width: 6 !important; }
+  .loop__note { position: absolute; left: 0; right: 0; top: 62px; }
+  .loop__note::before { content: none; }
+}
+
+/* The arrow draws itself once when it scrolls into view (main.js adds .js-anim) */
+.js-anim .loop__return[data-draw] .loop__reveal { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js-anim .loop__return[data-draw] .loop__head { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js-anim .loop__return[data-draw] .loop__note { opacity: 0; }
+.js-anim .loop__return[data-draw].is-in .loop__reveal { stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s cubic-bezier(.45, 0, .2, 1); }
+.js-anim .loop__return[data-draw].is-in .loop__head { stroke-dashoffset: 0; transition: stroke-dashoffset .35s ease-out 1.55s; }
+.js-anim .loop__return[data-draw].is-in .loop__note { opacity: 1; transition: opacity .5s ease-out 1.2s; }
 
 /* Case-study cards (homepage) */
 .case-cards { display: grid; gap: 32px; }
@@ -776,6 +840,7 @@ button { font: inherit; color: inherit; }
 
 /* About teaser */
 .pov { display: grid; gap: 24px; }
+.pov__print { box-shadow: 0 1px 2px rgba(23, 24, 26, .06), 0 12px 28px -12px rgba(23, 24, 26, .18); }
 .pov__quote { font-size: var(--t-h3); }
 .pov__print {
   width: min(100%, 330px);
@@ -789,17 +854,16 @@ button { font: inherit; color: inherit; }
   .pov {
     grid-template-columns: minmax(0, 760px) minmax(0, 1fr);
     grid-template-areas:
-      "label label"
       "quote text"
       "more  print";
     column-gap: 9px;
     row-gap: 0;
   }
-  .pov > .section-label { grid-area: label; margin-bottom: 47px; }
+  .pov-section { min-height: 824px; padding-block: 135px 64px; }
   .pov__quote { grid-area: quote; font-size: var(--t-h1); }
   .pov__text { grid-area: text; max-width: 520px; margin-top: 40px; }
-  .pov__more { grid-area: more; align-self: start; margin-top: 72px; }
-  .pov__aside { grid-area: print; margin-top: 40px; padding-left: 7px; }
+  .pov__more { grid-area: more; align-self: start; margin-top: 101px; }
+  .pov__aside { grid-area: print; margin-top: 57px; padding-left: 7px; }
 }
 
 
@@ -810,6 +874,7 @@ button { font: inherit; color: inherit; }
 .about-hero__title span { color: var(--accent); }
 .about-hero__intro { font-size: clamp(24px, 2.64vw, 38px); font-weight: 500; line-height: 1.16; letter-spacing: -.02em; }
 .about-hero .portrait { aspect-ratio: 430 / 610; }
+.about-hero__copy > * + * { margin-top: 28px; }
 @media (min-width: 1024px) {
   .about-hero { min-height: 960px; padding-bottom: 44px; }
   .about-hero__grid {
@@ -819,13 +884,13 @@ button { font: inherit; color: inherit; }
       "copy  .        portrait"
       "meta  meta     meta";
     grid-template-rows: auto 1fr auto;
-    padding-top: 58px;
+    padding-top: 86px;
     column-gap: 0;
     row-gap: 0;
   }
   .about-hero__head { grid-area: title; position: relative; z-index: 1; }
   .about-hero__copy { grid-area: copy; margin-top: 70px; }
-  .about-hero .portrait { grid-area: portrait; margin-top: 162px; }
+  .about-hero .portrait { grid-area: portrait; margin-top: 134px; }
   .about-hero__meta { grid-area: meta; margin-top: -12px; }
 }
 
@@ -854,16 +919,24 @@ button { font: inherit; color: inherit; }
 @media (min-width: 640px) { .timeline__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .timeline { margin-top: 72px; } .timeline__cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; } }
 
+/* My story */
+.timeline__lesson { color: var(--accent); }
+.timeline__card > * + * { margin-top: 12px; }
+@media (min-width: 1024px) {
+  .section.story { padding-block: 64px; }
+  .story .split { grid-template-columns: minmax(0, 1fr) minmax(0, 780px); }
+  .story .prose > * + * { margin-top: 14px; }
+  .story .timeline { margin-top: 56px; }
+  .story .timeline__card { padding: 20px 24px; }
+  .section.photo-section { padding-block: 64px; }
+  .section.details { padding-block: 120px; }
+}
+
 /* Photography: text + clean 2×2 gallery */
-.prints { display: grid; gap: 32px; align-items: center; }
-.prints__text > * + * { margin-top: 18px; }
-.prints__title { font-size: clamp(40px, 3.54vw, 51px); font-weight: 500; line-height: 1.04; letter-spacing: -.035em; }
-.prints__closing { font-size: var(--t-h5); font-weight: 500; line-height: 1.3; letter-spacing: -.015em; color: var(--accent); }
 .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 14px; }
 .gallery img { width: 100%; aspect-ratio: 298 / 364; object-fit: cover; border-radius: var(--r-card); }
 .gallery figcaption { margin-top: 10px; color: var(--muted); }
 @media (min-width: 1024px) {
-  .prints { grid-template-columns: 380px minmax(0, 620px); justify-content: center; gap: 64px; padding-inline: 24px; }
   .gallery { gap: 24px; }
 }
 
@@ -909,12 +982,15 @@ button { font: inherit; color: inherit; }
   .case-hero__skills { grid-area: skills; margin-top: 28px; }
 }
 
+/* Case-study hero picture: the export already is the whole grey panel (devices
+   in the middle). Phones crop into the middle so the devices stay large. */
 .hero-visual { padding: 0 0 56px; }
-.hero-visual .panel { padding: 24px 16px; display: grid; place-items: center; }
-.hero-visual img { width: 100%; max-width: 875px; margin-inline: auto; }
+.hero-visual .panel { overflow: hidden; }
+.hero-visual img { width: 170%; max-width: none; margin-left: -35%; }
+@media (min-width: 768px) { .hero-visual img { width: 130%; margin-left: -15%; } }
 @media (min-width: 1024px) {
-  .hero-visual { padding-bottom: 96px; }
-  .hero-visual .panel { padding: 56px; }
+  .hero-visual { padding-bottom: 48px; }
+  .hero-visual img { width: 100%; margin-left: 0; }
 }
 
 /* At a glance */
@@ -922,8 +998,28 @@ button { font: inherit; color: inherit; }
 .glance > div > * + * { margin-top: 14px; }
 @media (min-width: 1024px) { .glance { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; } .glance-section { padding-block: 80px; } }
 
-/* Index cards (01 / title / body) */
-.index-card .index { color: var(--accent); }
+/* Haglöfs: my contribution, 2×2 cards + team photo print */
+.contrib-h { display: grid; gap: 32px; }
+.contrib-h__cards { gap: 18px; }
+.print { margin: 0; }
+.print__paper {
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  box-shadow: 0 1px 2px rgba(23, 24, 26, .05), 0 14px 30px -16px rgba(23, 24, 26, .22);
+}
+.print__paper img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; }
+.print figcaption { margin-top: 16px; }
+@media (min-width: 1024px) {
+  .contrib-h { grid-template-columns: minmax(0, 892px) minmax(0, 396px); justify-content: space-between; gap: 40px; align-items: start; }
+  .contrib-h__cards > .card { min-height: 165px; }
+  .print figcaption { margin-top: 24px; }
+}
+
+/* MyMaria: accessibility & inclusion, inside Testing & iteration */
+.a11y-block { margin-top: 48px; }
+.a11y-block > .section-label + * { margin-top: 24px; }
 
 /* Reference brands (Haglöfs) */
 .refs { display: grid; gap: 24px 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1199,6 +1295,7 @@ button { font: inherit; color: inherit; }
   .case-card:hover, .case-card:focus-within { transform: none; }
   .case-card:hover .case-card__media > *, .case-card:focus-within .case-card__media > * { transform: none; }
   .typer__caret { animation: none; }
+  .fika__steam path { animation: none; opacity: 1; transform: none; }
 }
 
 
@@ -1206,7 +1303,7 @@ button { font: inherit; color: inherit; }
    On laptop screens these sections fit in one view without scrolling:
    tighter spacing, header text beside the heading, smaller pictures. */
 .offscreen { display: grid; gap: 32px; }
-.offscreen__text > * + * { margin-top: 32px; }
+.offscreen__text > * + * { margin-top: 20px; }
 .ai-row { display: grid; gap: 18px; }
 .ai-row .ai-example { padding: 12px; gap: 12px; }
 .ai-row .ai-example figcaption { color: var(--muted); }
@@ -1259,17 +1356,11 @@ button { font: inherit; color: inherit; }
 
   /* About — Off-screen: text left, 2×2 gallery right */
   .offscreen { grid-template-columns: minmax(0, 1fr) 440px; gap: 64px; align-items: start; }
-  .offscreen .split { grid-template-columns: 1fr; gap: 20px; }
-  .offscreen__text > * + * { margin-top: 40px; }
-  .offscreen .prints__text > * + * { margin-top: 12px; }
   .offscreen .gallery { gap: 14px 16px; }
   .offscreen .gallery img { aspect-ratio: 212 / 250; }
   .offscreen .gallery figcaption { margin-top: 6px; }
 
   /* Case-study hero picture + "At a glance" in one view */
-  .hero-visual { padding-bottom: 48px; }
-  .hero-visual .panel { padding: 32px; }
-  .hero-visual img { max-width: 620px !important; }
   .glance-section { padding-block: 0 64px; }
 }
 
@@ -1439,21 +1530,70 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 }
 
 
-/* Content page ------------------------------------------------------------- */
-.content-hero { padding-block: 40px var(--section-y); }
+/* 20. Content page -------------------------------------------------------- */
+.content-hero { padding-block: 48px var(--section-y); }
+.content-hero__text { max-width: 676px; }
+.content-hero__text > * + * { margin-top: 24px; }
+.content-hero__text .t-body-l { max-width: 640px; }
 @media (min-width: 1024px) { .content-hero { padding-top: 72px; } }
-.content-samples { display: grid; gap: 18px; }
+
+.samples__head > * + * { margin-top: 16px; }
+.samples__intro { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 12px; }
+.hand--tilt { font-size: 28px; color: var(--accent); transform: rotate(-3deg); transform-origin: 0 50%; }
+.content-samples { display: grid; gap: 18px; margin-top: 32px; }
 @media (min-width: 640px)  { .content-samples { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1024px) { .content-samples { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } }
+@media (min-width: 1024px) { .content-samples { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 48px; } }
 .content-sample { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
 .content-sample > * + * { margin-top: 0; }
-.content-sample__media { aspect-ratio: 1 / 1; background: var(--surface); }
-.content-sample__media img { width: 100%; height: 100%; object-fit: cover; }
-.content-sample__media--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.content-sample__media { position: relative; aspect-ratio: 425 / 427; background: var(--surface); }
+.content-sample__media > img { width: 100%; height: 100%; object-fit: cover; }
 .content-sample__media--books { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; }
-.content-sample__media--books img { width: 30%; height: auto; border-radius: var(--r-sm); box-shadow: 0 6px 16px -6px rgba(23, 24, 26, .3); }
-.content-sample__body { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: var(--card-pad); }
-.content-sample__body .link-arrow { margin-top: auto; padding-top: 8px; color: var(--accent); min-height: 44px; display: inline-flex; align-items: center; }
-.content-back { display: inline-flex; align-items: center; min-height: 44px; margin-top: 40px; color: var(--accent); }
-.home-content-line { margin-top: 32px; }
-.home-content-line a { color: var(--accent); }
+.content-sample__media--books > img { width: 28.2%; height: auto; object-fit: initial; border-radius: var(--r-sm); }
+.content-sample__doodle {
+  position: absolute; top: 24px; right: 24px; width: 44px; height: 44px;
+  fill: none; stroke: var(--accent); stroke-width: 1.83; stroke-linecap: round; stroke-linejoin: round;
+}
+.content-sample__body { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: 24px; }
+.content-sample__body .link-arrow { margin-top: auto; }
+.content-sample__note { margin-top: auto; padding-top: 14px; }
+/* Goal / Method / What I learned */
+.sample-story { display: grid; gap: 12px; }
+.sample-story > div { border-top: 1px solid var(--line); padding-top: 12px; }
+.sample-story dt { color: var(--muted); }
+.sample-story dd { margin: 4px 0 0; font-size: var(--t-small); line-height: 1.5; }
+
+/* AI is my studio assistant */
+.ai-use__title { position: relative; }
+.ai-use__cols { margin-top: 32px; }
+.content-back { display: inline-flex; margin-top: 40px; }
+@media (min-width: 1024px) {
+  .section.ai-use { padding-block: 120px; }
+  .ai-use__cols { margin-top: 48px; }
+  .content-back { margin-top: 48px; }
+}
+
+/* Handwritten notes (Caveat, burgundy). Decorative and hidden from screen readers. */
+.hand-note { display: flex; align-items: flex-start; gap: 4px; margin-top: 8px; color: var(--accent); letter-spacing: 0; }
+.hand-note__arrow { flex: none; width: 64px; height: 34px; margin-top: -4px; transform: scaleY(-1); overflow: visible;
+  fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.hand-note .hand { font-size: 26px; line-height: 1.25; }
+@media (min-width: 1024px) {
+  .hand-note { position: absolute; left: 4.625em; top: .75em; width: 300px; height: 70px; margin: 0; display: block; }
+  .hand-note__arrow { position: absolute; left: 0; top: 26px; margin: 0; transform: none; }
+  .hand-note .hand { position: absolute; left: 70px; top: 10px; white-space: nowrap; }
+}
+
+/* Handwriting writes itself: left to right like a pen (about 1 s, once),
+   then the arrow draws along its path (about 0.6 s). Reduced motion: just appears. */
+.hand__ink { display: inline-block; }
+.js-anim [data-hand] .hand__ink { clip-path: inset(-10% 100% -10% 0); }
+.js-anim [data-hand].is-in .hand__ink { clip-path: inset(-10% -2% -10% 0); transition: clip-path 1s cubic-bezier(.45, .05, .55, .95); }
+.js-anim [data-hand] .hand-note__arrow path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js-anim [data-hand].is-in .hand-note__arrow path:first-child { stroke-dashoffset: 0; transition: stroke-dashoffset .45s ease-in-out 1s; }
+.js-anim [data-hand].is-in .hand-note__arrow path:last-child { stroke-dashoffset: 0; transition: stroke-dashoffset .15s ease-out 1.45s; }
+@media (prefers-reduced-motion: reduce) {
+  .js-anim [data-hand] .hand__ink { clip-path: none !important; }
+  .js-anim [data-hand] .hand-note__arrow path,
+  .js-anim .loop__return[data-draw] path { stroke-dashoffset: 0 !important; }
+  .js-anim .loop__return[data-draw] .loop__note { opacity: 1 !important; }
+}

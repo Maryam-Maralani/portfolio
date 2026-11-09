@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maryam Maralani — UX/UI Designer</title>
-  <meta name="description" content="Maryam Maralani, UX/UI designer in Stockholm. I make complex, regulated products feel simple.">
+  <title>Maryam Maralani · UX/UI and digital designer</title>
+  <meta name="description" content="Maryam Maralani, UX/UI and digital designer in Stockholm. I make complex products feel simple, and I create the content that helps people understand them.">
   <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236E1423'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Caveat:wght@400&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="preload" as="image" href="images/portrait.webp">
+  <link rel="preload" as="image" href="images/portrait/portrait-662.webp">
   <script>if(!('onpagereveal' in window)&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))document.documentElement.classList.add('js-fade')</script>
   <script src="js/main.js" defer></script>
 </head>
@@ -20,9 +20,9 @@
 
   <header class="site-header">
     <nav class="container nav" aria-label="Main">
-      <a class="nav__brand" href="index.html"><span class="nav__mark" aria-hidden="true"></span>Maryam Maralani</a>
+      <a class="nav__brand" href="index.html" aria-current="page"><span class="nav__mark" aria-hidden="true"></span>Maryam Maralani</a>
       <ul class="nav__links">
-        <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li><li><a class="nav__link" href="index.html#work">Work</a></li><li><a class="nav__link" href="about.html">About</a></li><li><a class="nav__link" href="content.html">Content</a></li><li><a class="nav__link" href="cv.html">CV</a></li><li><a class="nav__cta" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="index.html#work">Case studies</a></li><li><a class="nav__link" href="content.html">Content</a></li><li><a class="nav__link" href="about.html">About</a></li><li><a class="nav__link" href="cv.html">CV</a></li><li><a class="nav__cta" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -34,58 +34,79 @@
       <div class="container home-hero__grid">
         <h1 class="home-hero__name t-hero" id="hero-title">Hi! I’m Maryam.</h1>
         <div class="home-hero__portrait portrait">
-          <img src="images/portrait.webp" alt="Portrait of Maryam Maralani, smiling with her arms crossed" width="430" height="610" fetchpriority="high">
+          <img src="images/portrait/portrait-662.webp" srcset="images/portrait/portrait-480.webp 480w, images/portrait/portrait-662.webp 662w, images/portrait/portrait-860.webp 860w" sizes="(min-width: 1024px) 331px, calc(100vw - 40px)" alt="Portrait of Maryam Maralani, smiling with her arms crossed" width="662" height="939" fetchpriority="high">
         </div>
         <div class="home-hero__lead">
           <p class="home-hero__role typer" data-typer>
-            <span class="sr-only">I’m a UX/UI designer.</span>
-            <span aria-hidden="true"><span class="typer__text">I’m a <span class="typer__word">UX/UI designer.</span></span><span class="typer__caret"></span></span>
+            <span class="sr-only">I’m a UX/UI and digital designer.</span>
+            <span class="typer__text" aria-hidden="true">I’m a <span class="typer__word">UX/UI designer.</span><span class="typer__caret"></span></span>
           </p>
-          <p class="home-hero__intro">I make complex, regulated products feel simple. Six years in law and compliance taught me where people get lost, and design is how I guide them through.</p>
+          <p class="home-hero__intro">I make complex products feel simple, and I create the content that helps people understand them. Six years in law taught me where people get lost. Research tells me how to guide them.</p>
         </div>
         <ul class="home-hero__skills t-label" aria-label="Skills">
-          <li>Research</li>
+          <li>User research</li>
           <li>UX/UI design</li>
-          <li>Visual systems</li>
-          <li>Prototyping + AI</li>
+          <li>Visual content</li>
+          <li>AI-assisted workflows</li>
         </ul>
         <div class="home-hero__meta t-label">
-          <p class="accent">Stockholm  ·  Open to UX/UI roles</p>
-          <a class="link-arrow muted" href="#bring">Scroll <span class="link-arrow__arrow link-arrow__arrow--down" aria-hidden="true">↓</span></a>
+          <p class="accent">Stockholm  ·  Open to UX/UI &amp; digital design roles</p>
+          <a class="link-arrow muted" href="#how-i-work">Scroll <span class="link-arrow__arrow link-arrow__arrow--down" aria-hidden="true">↓</span></a>
         </div>
       </div>
     </section>
 
-    <!-- 02 What I bring -->
-    <section class="section section--grey" id="bring" aria-labelledby="bring-title">
+    <!-- 02 How I work: a loop of four steps -->
+    <section class="section section--grey how" id="how-i-work" aria-labelledby="how-title">
       <div class="container" data-reveal>
-        <div class="section-head">
-          <p class="section-label t-label "><span class="section-label__num">01</span><span>What I bring</span></p>
-          <h2 class="t-h2 measure" id="bring-title">Research that listens.<br>Design that delights.</h2>
+        <h2 class="t-h2 how__title" id="how-title">Research that listens.<br>Design that delights.</h2>
+        <div class="loop">
+          <ol class="loop__steps">
+            <li class="loop__step card">
+              <h3 class="t-h4">Research</h3>
+              <p class="t-small muted">Interviews, journey maps and user tests. Claude and ChatGPT help me cluster findings.</p>
+              <svg class="loop__icon" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><path d="M14.45 4.25C7.65 4.25 3.4 9.35 4.25 15.3C5.1 21.25 10.2 24.65 15.3 23.8C21.25 22.95 25.5 17.85 24.65 11.9C23.8 6.8 18.7 3.4 12.75 5.1"/><path d="M22.1 22.1C24.65 24.65 27.2 27.2 30.6 30.6"/></svg>
+            </li>
+            <li class="loop__step card">
+              <h3 class="t-h4">Design</h3>
+              <p class="t-small muted">Flows and interfaces in Figma that make complex things feel simple and calm.</p>
+              <svg class="loop__icon" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><path d="M6.8 27.2L9.35 20.4L24.65 5.1C26.35 3.4 28.9 4.25 29.75 5.95C30.6 7.65 29.75 9.35 28.05 11.05L12.75 26.35L6.8 27.2Z"/><path d="M22.1 7.65L26.35 11.9"/><path d="M4.25 30.6C10.2 29.75 17 31.45 22.95 29.75"/></svg>
+            </li>
+            <li class="loop__step card">
+              <h3 class="t-h4">Create</h3>
+              <p class="t-small muted">Images and words that explain the product, made with care and AI tools like Magnific.</p>
+              <svg class="loop__icon" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><path d="M17 4.25C8.5 4.25 3.4 10.2 4.25 17.85C5.1 25.5 11.9 29.75 17.85 28.9C21.25 28.05 20.4 24.65 18.7 22.95C17 21.25 18.7 18.7 22.1 19.55C26.35 20.4 29.75 17.85 29.75 13.6C29.75 7.65 23.8 4.25 17 4.25Z"/><path d="M11.05 12.75C11.05 11.9 12.75 11.9 12.75 12.75C12.75 13.6 11.05 13.6 11.05 12.75Z"/><path d="M17 9.35C17 8.5 18.7 8.5 18.7 9.35C18.7 10.2 17 10.2 17 9.35Z"/><path d="M10.2 19.55C10.2 18.7 11.9 18.7 11.9 19.55C11.9 20.4 10.2 20.4 10.2 19.55Z"/></svg>
+            </li>
+            <li class="loop__step card">
+              <h3 class="t-h4">Test &amp; iterate</h3>
+              <p class="t-small muted">User tests and data show what works. I decide with evidence, then go back and improve.</p>
+              <svg class="loop__icon loop__icon--thin" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><path d="M7 18.5C9.4 20.1 11.3 22.2 13 24.8C16.6 17.8 21 12.2 27.5 7.5"/><path d="M4.5 9.5C5.7 9.3 6.8 9.4 7.9 9.8" stroke-width="1.2"/></svg>
+            </li>
+          </ol>
+          <div class="loop__return" data-draw>
+            <svg class="loop__arrow" viewBox="0 0 1180 70" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <defs><mask id="loop-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1180" height="70"><path class="loop__reveal" pathLength="1" d="M1160 4C1164 30 1146 48 1090 54C860 66 360 68 120 58C52 55 22 42 16 10"/></mask></defs>
+              <path class="loop__dash" mask="url(#loop-reveal)" d="M1160 4C1164 30 1146 48 1090 54C860 66 360 68 120 58C52 55 22 42 16 10"/>
+              <path class="loop__head" pathLength="1" d="M6 20C9 15 12 10 16 5C19 10 23 14 28 17"/>
+            </svg>
+            <p class="loop__note hand">the same loop for screens, images &amp; words</p>
+          </div>
         </div>
-        <ul class="grid grid--4">
-          <li class="card card--roomy bring-card"><p class="t-label accent" aria-hidden="true">01</p><h3 class="t-h4">Research</h3><p class="t-small muted">Interviews, journey maps and user testing that reveal what people actually need.</p></li>
-          <li class="card card--roomy bring-card"><p class="t-label accent" aria-hidden="true">02</p><h3 class="t-h4">UX/UI Design</h3><p class="t-small muted">Flows and interfaces that make complex things feel simple and calm to use.</p></li>
-          <li class="card card--roomy bring-card"><p class="t-label accent" aria-hidden="true">03</p><h3 class="t-h4">Visual Systems</h3><p class="t-small muted">Colourful, consistent visual languages with character and a clear hierarchy.</p></li>
-          <li class="card card--roomy bring-card"><p class="t-label accent" aria-hidden="true">04</p><h3 class="t-h4">Prototyping + AI fluency</h3><p class="t-small muted">Rapid mockups and prototypes with AI. Claude and ChatGPT to speed up research and cluster findings; Magnific for image and video.</p></li>
-        </ul>
       </div>
     </section>
 
-    <!-- 03 Work -->
-    <section class="section section--light" id="work" aria-labelledby="work-title">
+    <!-- 03 Case studies -->
+    <section class="section section--light work" id="work" aria-labelledby="work-title">
       <div class="container" data-reveal>
-        <div class="section-head">
-          <h2 class="section-label t-label" id="work-title"><span class="section-label__num">02</span><span>Case studies</span></h2>
-        </div>
+        <h2 class="sr-only" id="work-title">Case studies</h2>
         <div class="case-cards">
           <article class="case-card">
             <div class="case-card__media">
-              <img class="devices" src="images/haglofs/hero-devices.webp" alt="The redesigned Haglöfs product page on a laptop and a phone" width="1122" height="762" loading="lazy">
+              <img class="devices" src="images/haglofs/card-devices-1154.webp" srcset="images/haglofs/card-devices-600.webp 600w, images/haglofs/card-devices-1154.webp 1154w" sizes="(min-width: 1024px) 577px, calc(100vw - 74px)" alt="The redesigned Haglöfs product page on a laptop and a phone" width="1154" height="784" loading="lazy">
             </div>
             <div class="case-card__body">
               <h3 class="case-card__title"><a href="haglofs.html">Haglöfs</a></h3>
-              <p class="muted">A product page redesign that turns dense technical specs into a calm, premium shopping experience — revealing detail only when shoppers want it.</p>
+              <p class="muted">A product page redesign that turns dense technical specs into a clear, premium shopping experience, revealing detail only when shoppers want it.</p>
               <p class="t-label muted lines">Client project · via Hyper Island
 UX/UI · Research · Visual design
 2026</p>
@@ -95,14 +116,14 @@ UX/UI · Research · Visual design
           <article class="case-card">
             <div class="case-card__media">
               <div class="case-card__phones">
-                <div class="phone phone--s"><span class="phone__island" aria-hidden="true"></span><div class="phone__screen"><img src="images/mymaria-welcome.webp" alt="MyMaria welcome screen: “Hello! Welcome to MyMaria”" width="185" height="400" loading="lazy"></div></div>
-                <div class="phone phone--s"><span class="phone__island" aria-hidden="true"></span><div class="phone__screen"><img src="images/mymaria-home.webp" alt="MyMaria home screen with the next meeting and the current assignment" width="185" height="400" loading="lazy"></div></div>
-                <div class="phone phone--s"><span class="phone__island" aria-hidden="true"></span><div class="phone__screen"><img src="images/mymaria-journey.webp" alt="MyMaria “My journey” screen with activities and previous meetings" width="185" height="400" loading="lazy"></div></div>
+                <div class="phone phone--s"><span class="phone__island" aria-hidden="true"></span><div class="phone__screen"><img src="images/mymaria/screen-welcome-278.webp" alt="MyMaria welcome screen: “Hello! Welcome to MyMaria”" width="278" height="604" loading="lazy"></div></div>
+                <div class="phone phone--s"><span class="phone__island" aria-hidden="true"></span><div class="phone__screen"><img src="images/mymaria/screen-home-278.webp" alt="MyMaria home screen with the next meeting and the current assignment" width="278" height="603" loading="lazy"></div></div>
+                <div class="phone phone--s"><span class="phone__island" aria-hidden="true"></span><div class="phone__screen"><img src="images/mymaria/screen-journey-278.webp" alt="MyMaria “My journey” screen with activities and previous meetings" width="278" height="603" loading="lazy"></div></div>
               </div>
             </div>
             <div class="case-card__body">
               <h3 class="case-card__title"><a href="mymaria.html">MyMaria</a></h3>
-              <p class="muted">A treatment companion app for young people at Maria Ungdom, designed to feel safe, calm and encouraging — from first download to daily check-ins.</p>
+              <p class="muted">A treatment companion app for young people at Maria Ungdom, designed to feel safe, calm and encouraging, from first download to daily check-ins.</p>
               <p class="t-label muted lines">Client project · Maria Ungdom · via Hyper Island
 Role: UX designer · 6 weeks · Team of 4
 Expert interviews · User journey · User testing</p>
@@ -110,26 +131,23 @@ Expert interviews · User journey · User testing</p>
             </div>
           </article>
         </div>
-        <p class="home-content-line t-body-m muted">I also write, photograph and create with AI. <a class="link-arrow" href="content.html"><span class="link-arrow__text">See my content work</span> <span class="link-arrow__arrow" aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
     <!-- 04 About teaser -->
-    <section class="section section--grey" aria-labelledby="pov-title">
+    <section class="section section--grey pov-section" aria-labelledby="pov-title">
       <div class="container pov" data-reveal>
-        <p class="section-label t-label "><span class="section-label__num">04</span><span>About</span></p>
-        <h2 class="pov__quote t-h1" id="pov-title">Everyone has a story.<br>Good design listens<br>to it first.</h2>
-        <p class="pov__text t-body-l">I came to design from law. Six years in compliance taught me to make complex things clear, translating three books taught me that every word matters. Today I bring both to UX — and tell people’s stories through my camera, too.</p>
+        <h2 class="pov__quote t-h1" id="pov-title">I’ve always been<br>a translator.</h2>
+        <p class="pov__text t-body-l">First legal language, turned into agreements people could understand. Then three novels, from English to Persian. Now complex products, turned into clear screens and content. And off-screen, people’s stories, through my camera.</p>
         <a class="pov__more link-arrow t-label" href="about.html"><span class="link-arrow__text">More about me</span> <span class="link-arrow__arrow" aria-hidden="true">→</span></a>
         <div class="pov__aside">
           <figure class="pov__print">
-            <img src="images/photo-5-ref-600.webp" srcset="images/photo-5-ref-600.webp 600w, images/photo-5-ref-1000.webp 1000w" sizes="(min-width: 1024px) 280px, 80vw" alt="A small hand in a fluffy sleeve holding cherry blossoms, resting in an adult’s hand" width="1000" height="1250" loading="lazy">
+            <img src="images/photography/home-print-560.webp" srcset="images/photography/home-print-280.webp 280w, images/photography/home-print-560.webp 560w" sizes="280px" alt="A small hand in a fluffy sleeve holding cherry blossoms, resting in an adult’s hand" width="560" height="700" loading="lazy">
           </figure>
           <a class="link-arrow t-label muted" href="about.html#photography"><span class="link-arrow__text">To the photobook</span> <span class="link-arrow__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Floating back-to-top badge: appears after the hero; drag it to either side -->
@@ -149,16 +167,17 @@ Expert interviews · User journey · User testing</p>
 
   <footer class="site-footer" id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <p class="section-label t-label"><span class="section-label__num">05</span><span>Contact</span></p>
-      <h2 class="site-footer__headline" id="contact-title">Let’s create something<br>people <em>love to use.</em></h2>
-      <p class="site-footer__text">Looking for a junior UX/UI role or internship, on-site or hybrid in Stockholm, or remote from anywhere. I’d love to hear from you.</p>
+      <h2 class="site-footer__headline" id="contact-title">Let’s create something<br>people <em>love.</em><span class="fika" aria-hidden="true"><svg viewBox="0 0 64 96" focusable="false">
+          <g class="fika__steam"><path d="M13.67 56.67C9.67 51.67 17.67 48.67 13.67 43.67C9.67 38.67 17.67 35.67 13.67 30.67"/><path d="M23.67 56.67C19.67 51.67 27.67 48.67 23.67 43.67C19.67 38.67 27.67 35.67 23.67 30.67"/><path d="M33.67 56.67C29.67 51.67 37.67 48.67 33.67 43.67C29.67 38.67 37.67 35.67 33.67 30.67"/></g>
+          <g class="fika__cup"><path d="M10.67 56.67H45.33V70C45.33 79.33 38.67 86 28 86C17.33 86 10.67 79.33 10.67 70V56.67Z"/><path d="M45.33 60.67C54.67 60.67 56 74 45.33 72.67"/></g>
+        </svg></span></h2>
+      <p class="site-footer__text">Looking for a UX/UI or digital design internship or junior role, on-site or hybrid in Stockholm, or remote from anywhere. I’d love to hear from you.</p>
       <div class="site-footer__row">
         <ul class="site-footer__links t-label">
           <li><a href="mailto:maryamhmaralani@gmail.com">Email <span aria-hidden="true">↗</span><span class="sr-only"> maryamhmaralani@gmail.com</span></a></li>
           <li><a href="https://www.linkedin.com/in/maryam-maralani" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
           <li><a href="cv.html">CV <span aria-hidden="true">→</span></a></li>
         </ul>
-        
       </div>
       <div class="site-footer__bottom t-label">
         <p>Maryam Maralani  ·  Stockholm  ·  2026</p>

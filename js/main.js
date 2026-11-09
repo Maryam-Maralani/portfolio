@@ -4,7 +4,7 @@
    prefers-reduced-motion, and every page stays fully readable without JS.
 
    1. Helpers
-   2. Role line: types and erases, twice, then stops (homepage)
+   2. Role line: types and erases in a loop (homepage)
    3. Sections fade up 18px as they appear
    4. Portrait: duotone → colour when fully in view on touch screens
    5. Page transitions (view transitions + fallback fade)
@@ -20,53 +20,40 @@ var MM = {
 };
 
 /* 2. Role line --------------------------------------------------------------
-   "I'm a UX/UI designer." → "I'm a product designer." and back, twice, then
-   it stays on "I'm a UX/UI designer.". Screen readers always get the static
-   sentence (the moving text is aria-hidden). The changing words are
-   burgundy. A click on the line, or Escape, stops it. */
+   Types "UX/UI designer.", deletes it, types "digital designer." and loops.
+   Screen readers always get "I’m a UX/UI and digital designer." (the moving
+   text is aria-hidden). Reduced motion: a static "UX/UI & digital designer."
+   A click on the line, or Escape, stops it on that static text too. */
 (function () {
   var root = document.querySelector('[data-typer]');
   if (!root) return;
   var out = root.querySelector('.typer__word');
-  var prefix = '';
-  var a = 'UX/UI designer.';
-  var b = 'product designer.';
-  var timer = null;
-  var stopped = false;
+  var words = ['UX/UI designer.', 'digital designer.'];
+  var STILL = 'UX/UI & digital designer.';
+  var timer = null, stopped = false;
 
   function finish() {
     stopped = true;
     clearTimeout(timer);
-    out.textContent = prefix + a;
+    out.textContent = STILL;
     root.classList.add('is-done');
   }
-
   if (MM.reduce()) { finish(); return; }
 
-  // Steps: erase a, type b, hold, erase b, type a, hold — twice
-  var steps = [];
-  for (var round = 0; round < 2; round++) {
-    steps.push(['hold', 1400], ['erase', a], ['type', b], ['hold', 1500], ['erase', b], ['type', a]);
-  }
-  var i = 0, word = a, pos = a.length;
-
+  var w = 0, pos = words[0].length, mode = 'hold';
   function tick() {
     if (stopped) return;
-    var s = steps[i];
-    if (!s) { finish(); return; }
-    if (s[0] === 'hold') { i++; timer = setTimeout(tick, s[1]); return; }
-    if (s[0] === 'erase') {
-      if (pos > 0) { pos--; out.textContent = prefix + word.slice(0, pos); timer = setTimeout(tick, 38); return; }
-      i++; timer = setTimeout(tick, 260); return;
+    if (document.hidden) { timer = setTimeout(tick, 500); return; }
+    var word = words[w];
+    if (mode === 'hold') { mode = 'erase'; timer = setTimeout(tick, 1800); return; }
+    if (mode === 'erase') {
+      if (pos > 0) { pos--; out.textContent = word.slice(0, pos); timer = setTimeout(tick, 40); return; }
+      w = (w + 1) % words.length; mode = 'type'; timer = setTimeout(tick, 300); return;
     }
-    if (s[0] === 'type') {
-      word = s[1];
-      if (pos < word.length) { pos++; out.textContent = prefix + word.slice(0, pos); timer = setTimeout(tick, 62); return; }
-      i++; timer = setTimeout(tick, 0); return;
-    }
+    if (pos < word.length) { pos++; out.textContent = word.slice(0, pos); timer = setTimeout(tick, 70); return; }
+    mode = 'hold'; timer = setTimeout(tick, 0);
   }
 
-  // Clicking the line or pressing Escape stops the animation straight away
   root.addEventListener('click', finish);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') finish(); });
   if (MM.mq && MM.mq.addEventListener) MM.mq.addEventListener('change', function () { if (MM.reduce()) finish(); });
@@ -303,7 +290,8 @@ var MM = {
 /* 9. Storytelling animations ------------------------------------------------
    a. Reading progress bar on case studies
    b. Haglöfs: markers 1–4 appear in turn; changes and markers highlight each other
-   c. MyMaria emotion curve and About timeline draw once when in view */
+   c. MyMaria emotion curve, About timeline, the homepage loop arrow and the
+      Content page handwriting draw once when in view */
 (function () {
   var bar = document.querySelector('.progress span');
   if (bar) {
@@ -341,7 +329,7 @@ var MM = {
   }
 
   if (MM.reduce() || !('IntersectionObserver' in window)) return;
-  var items = document.querySelectorAll('[data-markers], [data-draw]');
+  var items = document.querySelectorAll('[data-markers], [data-draw], [data-hand]');
   if (!items.length) return;
   document.documentElement.classList.add('js-anim');
   var io = new IntersectionObserver(function (entries) {
