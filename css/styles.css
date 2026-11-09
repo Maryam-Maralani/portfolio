@@ -1517,19 +1517,20 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .content-sample > * + * { margin-top: 0; }
 .content-sample__media { position: relative; aspect-ratio: 425 / 427; background: var(--surface); }
 .content-sample__media > img { width: 100%; height: 100%; object-fit: cover; }
-/* Label on AI-generated pictures (same idea as the Haglöfs "AI-genererad bild" label) */
+/* Label on AI-generated pictures: same look and size as the "AI-genererad bild"
+   label inside the Haglöfs close-up next to it (scales with the card) */
+.content-sample__media { container-type: inline-size; }
 .ai-tag {
-  position: absolute; left: 12px; bottom: 12px;
-  padding: 5px 10px;
-  border-radius: var(--r-pill);
-  background: rgba(23, 24, 26, .78);
-  color: var(--white);
-  font-size: 12px; font-weight: 500; line-height: 1.2;
+  position: absolute; left: 4cqw; bottom: 4.2cqw;
+  display: inline-flex; align-items: center; gap: 2.2cqw;
+  height: 7.6cqw; padding: 0 3.3cqw 0 3cqw;
+  border-radius: 999px;
+  background: #D0D0CF;
+  color: #1E1E1E;
+  font-family: 'Noto Serif', Georgia, 'Times New Roman', serif;
+  font-size: 3cqw; line-height: 1;
 }
-.content-sample__doodle {
-  position: absolute; top: 24px; right: 24px; width: 44px; height: 44px;
-  fill: none; stroke: var(--accent); stroke-width: 1.83; stroke-linecap: round; stroke-linejoin: round;
-}
+.ai-tag svg { width: 2.6cqw; height: 2.6cqw; fill: #24453A; flex: none; }
 .content-sample__body { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: 24px; }
 .content-sample__body .link-arrow { margin-top: auto; }
 .content-sample__note { margin-top: auto; padding-top: 14px; }
