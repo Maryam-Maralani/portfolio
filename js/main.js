@@ -149,7 +149,7 @@ var MM = {
 })();
 
 /* 6. Floating back-to-top badge ---------------------------------------------
-   Appears after the hero and rests on the right edge. It can be dragged
+   Appears once you scroll a little more than half a screen and rests on the right edge. It can be dragged
    anywhere and springs to the nearest side on release. A tap, Enter or Space
    scrolls smoothly to the top. */
 (function () {
@@ -166,7 +166,7 @@ var MM = {
   function place(x, y) { fab.style.setProperty('--x', x + 'px'); fab.style.setProperty('--y', y + 'px'); }
   function rest() { place(side === 'right' ? vw() - size() - M : M, clampY(yFrac * vh())); }
   function update() {
-    var past = hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 600;
+    var past = window.scrollY > vh() * 0.6 || (hero ? hero.getBoundingClientRect().bottom < 0 : false);
     fab.classList.toggle('is-shown', past);
     fab.tabIndex = past ? 0 : -1;
     fab.setAttribute('aria-hidden', past ? 'false' : 'true');
