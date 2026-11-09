@@ -995,7 +995,7 @@ button { font: inherit; color: inherit; }
 
 /* Reference brands (Haglöfs) */
 .refs { display: grid; gap: 24px 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.refs img { width: 100%; aspect-ratio: 317 / 220; object-fit: cover; border-radius: var(--r-card); }
+.refs img { width: 100%; aspect-ratio: 317 / 140; object-fit: cover; border-radius: var(--r-card); }
 .refs figcaption { margin-top: 10px; }
 .refs figcaption > * + * { margin-top: 4px; }
 @media (min-width: 1024px) { .refs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
@@ -1119,7 +1119,7 @@ button { font: inherit; color: inherit; }
 
 /* MyMaria: journey map */
 .journey-intro { display: grid; gap: 24px; align-items: start; }
-.paper-print { width: min(100%, 340px); }
+.paper-print { width: min(100%, 330px); }
 .paper-print__card { padding: 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-card); }
 .paper-print__card img { width: 100%; aspect-ratio: 287 / 220; object-fit: cover; border-radius: var(--r-card); }
 .paper-print figcaption { margin-top: 14px; padding-inline: 10px; color: var(--muted); }
