@@ -4,7 +4,7 @@
    prefers-reduced-motion, and every page stays fully readable without JS.
 
    1. Helpers
-   2. Role line: types and erases in a loop (homepage)
+   2. Role line: one swap, then settles within 5 s (homepage)
    3. Sections fade up 18px as they appear
    4. Portrait: duotone → colour when fully in view on touch screens
    5. Page transitions (view transitions + fallback fade)
@@ -20,44 +20,48 @@ var MM = {
 };
 
 /* 2. Role line --------------------------------------------------------------
-   Types "UX/UI designer.", deletes it, types "digital designer." and loops.
+   Types "UX/UI designer.", deletes it, types "digital designer.", then settles
+   on "UX/UI & digital designer." and stops. The whole movement ends within
+   5 seconds, so no pause button is needed (WCAG 2.2.2 Pause, Stop, Hide).
    Screen readers always get "I’m a UX/UI and digital designer." (the moving
-   text is aria-hidden). Reduced motion: a static "UX/UI & digital designer."
-   A click on the line, or Escape, stops it on that static text too. */
+   text is aria-hidden). Reduced motion: the static end text straight away.
+   A click on the line, or Escape, jumps to the end text too. */
 (function () {
   var root = document.querySelector('[data-typer]');
   if (!root) return;
   var out = root.querySelector('.typer__word');
-  var words = ['UX/UI designer.', 'digital designer.'];
-  var STILL = 'UX/UI & digital designer.';
-  var timer = null, stopped = false;
+  var A = 'UX/UI designer.', B = 'digital designer.', STILL = 'UX/UI & digital designer.';
+  var timer = null, done = false;
 
   function finish() {
-    stopped = true;
+    if (done) return;
+    done = true;
     clearTimeout(timer);
     out.textContent = STILL;
     root.classList.add('is-done');
   }
   if (MM.reduce()) { finish(); return; }
 
-  var w = 0, pos = words[0].length, mode = 'hold';
+  // Timeline (ms): wait 400 · hold 1200 · erase A (15 × 35) · 200 · type B (17 × 60) · hold 900 · end ≈ 4.3 s
+  var steps = [['hold', 1200], ['erase', A], ['pause', 200], ['type', B], ['hold', 900]];
+  var i = 0, pos = A.length;
   function tick() {
-    if (stopped) return;
-    if (document.hidden) { timer = setTimeout(tick, 500); return; }
-    var word = words[w];
-    if (mode === 'hold') { mode = 'erase'; timer = setTimeout(tick, 1800); return; }
-    if (mode === 'erase') {
-      if (pos > 0) { pos--; out.textContent = word.slice(0, pos); timer = setTimeout(tick, 40); return; }
-      w = (w + 1) % words.length; mode = 'type'; timer = setTimeout(tick, 300); return;
+    if (done) return;
+    var s = steps[i];
+    if (!s) { finish(); return; }
+    if (s[0] === 'hold' || s[0] === 'pause') { i++; timer = setTimeout(tick, s[1]); return; }
+    if (s[0] === 'erase') {
+      if (pos > 0) { pos--; out.textContent = s[1].slice(0, pos); timer = setTimeout(tick, 35); return; }
+      i++; timer = setTimeout(tick, 0); return;
     }
-    if (pos < word.length) { pos++; out.textContent = word.slice(0, pos); timer = setTimeout(tick, 70); return; }
-    mode = 'hold'; timer = setTimeout(tick, 0);
+    if (pos < s[1].length) { pos++; out.textContent = s[1].slice(0, pos); timer = setTimeout(tick, 60); return; }
+    i++; timer = setTimeout(tick, 0);
   }
 
   root.addEventListener('click', finish);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') finish(); });
   if (MM.mq && MM.mq.addEventListener) MM.mq.addEventListener('change', function () { if (MM.reduce()) finish(); });
-  timer = setTimeout(tick, 600);
+  timer = setTimeout(tick, 400);
 })();
 
 /* 3. Sections fade up 18px, once. The first screen is never hidden. */
