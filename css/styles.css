@@ -1575,3 +1575,9 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .js-anim .loop__return[data-draw] path { stroke-dashoffset: 0 !important; }
   .js-anim .loop__return[data-draw] .loop__note { opacity: 1 !important; }
 }
+
+/* Phones: let multi-line headings rewrap naturally instead of forcing the desktop line breaks */
+@media (max-width: 639.98px) {
+  main h2 { text-wrap: balance; }
+  main h2 br { display: none; }
+}
