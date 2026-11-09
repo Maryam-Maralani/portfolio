@@ -1517,21 +1517,15 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .content-sample > * + * { margin-top: 0; }
 .content-sample__media { position: relative; aspect-ratio: 425 / 427; background: var(--surface); }
 .content-sample__media > img { width: 100%; height: 100%; object-fit: cover; }
-/* Translated books: three covers fanned out like books spread on a table */
-.books-fan { overflow: hidden; }
-.books-fan > .book {
-  position: absolute;
-  top: 50%;
-  width: 42%;
-  height: auto;
-  object-fit: initial;
-  border-radius: var(--r-sm);
-  box-shadow: 0 2px 4px rgba(23, 24, 26, .12), 0 16px 30px -12px rgba(23, 24, 26, .4);
+/* Label on AI-generated pictures (same idea as the Haglöfs "AI-genererad bild" label) */
+.ai-tag {
+  position: absolute; left: 12px; bottom: 12px;
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  background: rgba(23, 24, 26, .78);
+  color: var(--white);
+  font-size: 12px; font-weight: 500; line-height: 1.2;
 }
-.books-fan > .book--left  { left: 9%;  transform: translateY(-46%) rotate(-9deg); }
-.books-fan > .book--right { right: 9%; transform: translateY(-46%) rotate(8deg); }
-.books-fan > .book--front { left: 29%; transform: translateY(-52%) rotate(-1.5deg); z-index: 1; }
-.books-fan .content-sample__doodle { z-index: 2; }
 .content-sample__doodle {
   position: absolute; top: 24px; right: 24px; width: 44px; height: 44px;
   fill: none; stroke: var(--accent); stroke-width: 1.83; stroke-linecap: round; stroke-linejoin: round;
