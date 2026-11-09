@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Maryam Maralani — Portfolio (v2)
+   Maryam Maralani — Portfolio (v4)
    Small, dependency-free scripts. Every effect respects
    prefers-reduced-motion, and every page stays fully readable without JS.
 

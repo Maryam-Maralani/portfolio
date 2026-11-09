@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Maryam Maralani — Portfolio (v2, modern redesign)
-   One shared stylesheet for all five pages. Mobile-first: base styles follow
+   Maryam Maralani — Portfolio (v4)
+   One shared stylesheet for all six pages. Mobile-first: base styles follow
    the 390px Figma frames; the min-width 1024px blocks follow the 1440px frames.
 
    1.  Design tokens
@@ -16,6 +16,9 @@
    11. Case studies (shared + Haglöfs + MyMaria)
    12. CV
    13. Motion (reveal, page fade, hovers) + reduced motion
+   14–19. Compact sections, Haglöfs Q1, storytelling animations, page
+          transitions, MyMaria fits
+   20. Content page + handwritten notes
    ========================================================================== */
 
 
@@ -160,7 +163,6 @@ button { font: inherit; color: inherit; }
 .section { padding-block: var(--section-y); }
 .section--light { background: var(--bg); }
 .section--grey  { background: var(--surface); }
-.section--white { background: var(--white); }
 
 .stack > * + * { margin-top: var(--stack, 24px); }
 
@@ -182,8 +184,6 @@ button { font: inherit; color: inherit; }
   .split { grid-template-columns: minmax(0, 1fr) minmax(0, 608px); gap: 24px; }
 }
 
-.measure-s { max-width: 640px; }
-.measure   { max-width: 860px; }
 .measure-l { max-width: 1000px; }
 
 
@@ -209,7 +209,6 @@ button { font: inherit; color: inherit; }
 .t-body-xl { font-size: var(--t-body-xl); line-height: 1.5; }
 .t-body-l  { font-size: var(--t-body-l);  line-height: 1.55; }
 .t-body-m  { font-size: var(--t-body-m);  line-height: 1.55; }
-.t-body    { font-size: var(--t-body);    line-height: 1.55; }
 .t-small   { font-size: var(--t-small);   line-height: 1.5; }
 .t-caption { font-size: var(--t-caption); line-height: 1.5; }
 
@@ -224,7 +223,6 @@ button { font: inherit; color: inherit; }
 
 .muted  { color: var(--muted); }
 .accent { color: var(--accent); }
-.ink    { color: var(--ink); }
 
 .lines { white-space: pre-line; }
 
@@ -234,14 +232,13 @@ button { font: inherit; color: inherit; }
 
 /* 5. Shared components ----------------------------------------------------- */
 
-/* Section label: "01  WHAT I BRING" */
+/* Section label (case studies and CV): "OVERVIEW" */
 .section-label {
   display: flex;
   gap: 12px;
   align-items: baseline;
   color: var(--muted);
 }
-.section-label__num { color: var(--accent); }
 
 /* Header block at the top of each section */
 .section-head > * + * { margin-top: 24px; }
@@ -261,31 +258,9 @@ button { font: inherit; color: inherit; }
 .link-arrow__arrow { display: inline-block; transition: transform .25s var(--ease); }
 .link-arrow:hover .link-arrow__arrow,
 .link-arrow:focus-visible .link-arrow__arrow { transform: translateX(4px); }
-.link-arrow:hover .link-arrow__arrow--up,
-.link-arrow:focus-visible .link-arrow__arrow--up { transform: translate(3px, -3px); }
 .link-arrow:hover .link-arrow__arrow--down,
 .link-arrow:focus-visible .link-arrow__arrow--down { transform: translateY(3px); }
 .link-arrow:hover .link-arrow__text { text-decoration: underline; text-underline-offset: 4px; }
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 10px 20px;
-  border-radius: var(--r-pill);
-  border: 1px solid transparent;
-  font-size: var(--t-small);
-  font-weight: 500;
-  line-height: 1.2;
-  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
-}
-.btn--primary { background: var(--accent); color: var(--white); }
-.btn--primary:hover { background: var(--accent-deep); }
-.btn--secondary { border-color: var(--ink); color: var(--ink); }
-.btn--secondary:hover { background: var(--ink); color: var(--bg); }
 
 /* Cards: white, hairline, 8px corners */
 .card {
@@ -297,7 +272,6 @@ button { font: inherit; color: inherit; }
 .card > * + * { margin-top: 12px; }
 .card--roomy { padding: 24px 20px; }
 @media (min-width: 1024px) { .card--roomy { padding: 28px; } }
-.card--tint { background: var(--surface); border-color: var(--surface); }
 
 /* Open columns with a top hairline (lists of different length) */
 .open-col {
@@ -361,7 +335,6 @@ button { font: inherit; color: inherit; }
 }
 
 /* Images */
-.img-round { border-radius: var(--r-card); }
 .panel {
   background: var(--surface);
   border-radius: var(--r-image);
@@ -477,8 +450,7 @@ button { font: inherit; color: inherit; }
   transition: color .2s var(--ease);
 }
 .nav__link:hover { color: var(--ink); }
-.nav__link[aria-current="page"],
-.nav__link.is-current { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.nav__link[aria-current] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .nav__cta {
   position: relative;
   display: inline-flex;
@@ -1215,9 +1187,7 @@ button { font: inherit; color: inherit; }
 .before-after { display: grid; gap: 16px; }
 .before-after .card > * + * { margin-top: 18px; }
 @media (min-width: 1024px) { .before-after { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; } .before-after .card { padding: 28px; } }
-.onboarding { display: grid; gap: 32px; align-items: center; margin-top: 30px; }
 .onboarding__caption > * + * { margin-top: 16px; }
-@media (min-width: 1024px) { .onboarding { grid-template-columns: 350px minmax(0, 480px); gap: 80px; } }
 
 
 /* 12. CV ------------------------------------------------------------------- */
