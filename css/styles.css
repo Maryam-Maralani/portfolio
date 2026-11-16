@@ -613,6 +613,7 @@ button { font: inherit; color: inherit; }
     "name"
     "portrait"
     "role"
+    "focus"
     "skills"
     "intro"
     "meta";
@@ -622,6 +623,7 @@ button { font: inherit; color: inherit; }
 .home-hero__name { grid-area: name; }
 .home-hero__portrait { grid-area: portrait; }
 .home-hero__role { grid-area: role; }
+.home-hero__focus { grid-area: focus; }  /* static line under the typed title */
 .home-hero__intro { grid-area: intro; font-size: 24px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
 .home-hero__skills { grid-area: skills; color: var(--muted); }
 .home-hero__skills li + li { margin-top: 0; }
@@ -668,6 +670,11 @@ button { font: inherit; color: inherit; }
   aspect-ratio: 331 / 470;
   background: var(--surface);
   isolation: isolate;
+  /* Mobile fix: Safari can drop the rounded clipping while the duotone fades,
+     and phones draw a square tap highlight. Both showed as a rectangle. */
+  clip-path: inset(0 round 9999px);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-tap-highlight-color: transparent;
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; }
 .portrait::after {
@@ -696,6 +703,7 @@ button { font: inherit; color: inherit; }
   }
   .home-hero__portrait { margin-top: 13px; }
   .home-hero__lead { grid-area: lead; align-self: start; margin-top: 81px; }
+  .home-hero__focus { margin-top: 12px; }
   .home-hero__intro { font-size: 16px; font-weight: 600; line-height: 1.55; letter-spacing: 0; max-width: 430px; margin-top: 16px; }
   .home-hero__skills { align-self: start; margin-top: 111px; }
   .home-hero__meta { flex-direction: row; justify-content: space-between; align-items: center; margin-top: 4px; }
@@ -1219,6 +1227,7 @@ button { font: inherit; color: inherit; }
 .cv-hero__content { padding-top: 56px; }
 .cv-hero__content > * + * { margin-top: 20px; }
 .cv-hero__role { font-size: 14px; font-weight: 600; color: var(--accent); }
+.cv-hero__focus { font-weight: 500; }
 .cv-hero__name { font-size: var(--t-page); }
 .cv-hero__rule { height: 1px; background: var(--accent); border: 0; margin: 0; }
 .cv-hero__contact { display: flex; flex-direction: column; gap: 8px; }
