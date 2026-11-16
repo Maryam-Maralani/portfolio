@@ -20,17 +20,16 @@ var MM = {
 };
 
 /* 2. Role line --------------------------------------------------------------
-   Types "UX/UI designer.", deletes it, types "digital designer.", then settles
-   on "UX/UI & digital designer." and stops. The whole movement ends within
+   Types "digital designer." once and stops. The whole movement ends within
    5 seconds, so no pause button is needed (WCAG 2.2.2 Pause, Stop, Hide).
-   Screen readers always get "I’m a UX/UI and digital designer." (the moving
+   Screen readers always get "I’m a digital designer." (the moving
    text is aria-hidden). Reduced motion: the static end text straight away.
    A click on the line, or Escape, jumps to the end text too. */
 (function () {
   var root = document.querySelector('[data-typer]');
   if (!root) return;
   var out = root.querySelector('.typer__word');
-  var A = 'UX/UI designer.', B = 'digital designer.', STILL = 'UX/UI & digital designer.';
+  var B = 'digital designer.', STILL = B;
   var timer = null, done = false;
 
   function finish() {
@@ -42,9 +41,10 @@ var MM = {
   }
   if (MM.reduce()) { finish(); return; }
 
-  // Timeline (ms): wait 400 · hold 1200 · erase A (15 × 35) · 200 · type B (17 × 60) · hold 900 · end ≈ 4.3 s
-  var steps = [['hold', 1200], ['erase', A], ['pause', 200], ['type', B], ['hold', 900]];
-  var i = 0, pos = A.length;
+  // Timeline (ms): wait 400 · type B (17 × 60) · end ≈ 1.5 s
+  var steps = [['type', B]];
+  var i = 0, pos = 0;
+  out.textContent = '';
   function tick() {
     if (done) return;
     var s = steps[i];
