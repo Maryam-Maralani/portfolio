@@ -83,18 +83,8 @@ var MM = {
   window.addEventListener('beforeprint', function () { items.forEach(function (el) { el.classList.add('is-in'); }); });
 })();
 
-/* 4. Portrait duotone: hover handles mouse users in CSS. On touch screens
-      the photo turns to colour once it is fully in view. */
-(function () {
-  if (!('IntersectionObserver' in window)) return;
-  if (!window.matchMedia || !matchMedia('(hover: none)').matches) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      e.target.classList.toggle('is-colour', e.intersectionRatio >= 0.95);
-    });
-  }, { threshold: [0, 0.95, 1] });
-  document.querySelectorAll('.portrait').forEach(function (p) { io.observe(p); });
-})();
+/* 4. Portrait duotone: colour on hover is CSS-only, for mouse users.
+      Touch screens always keep the duotone. */
 
 /* 5. Page transitions -------------------------------------------------------
    Modern browsers (Chrome, Edge, Safari): native cross-document view
