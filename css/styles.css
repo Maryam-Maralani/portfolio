@@ -687,7 +687,10 @@ button { font: inherit; color: inherit; }
   transition: opacity .6s var(--ease);
   pointer-events: none;
 }
-.portrait:hover::after, .portrait.is-colour::after { opacity: 0; }
+/* Colour on hover only with a real mouse; phones and tablets stay duotone */
+@media (hover: hover) and (pointer: fine) {
+  .portrait:hover::after { opacity: 0; }
+}
 
 @media (min-width: 1024px) {
   .home-hero { padding-bottom: 24px; }
