@@ -1778,13 +1778,8 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .homer-card__phone { width: 31cqw; right: 7cqw; }
 }
 
-/* Stylescape + LinkedIn row fit one desktop screen (about 70% of its height) */
-@media (min-width: 1024px) {
-  .homer-figure { width: min(100%, 1152px, 128vh); }
-}
-@media (min-width: 768px) {
-  .linkedin-row { width: min(100%, 1155px, 128vh); }
-}
+.homer-figure__cap { display: flex; flex-wrap: wrap; gap: 0 24px; align-items: center; justify-content: space-between; }
+.homer-figure figcaption.homer-figure__cap { margin-top: 4px; }
 
 /* Homer hero tiles sit on the same mist panel as the Haglöfs and MyMaria heroes */
 .homer-hero-panel { padding: 16px; }
