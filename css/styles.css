@@ -1779,3 +1779,11 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .homer-card__word { font-size: 4.4cqw; }
   .homer-card__phone { width: 31cqw; right: 7cqw; }
 }
+
+/* Stylescape + LinkedIn row fit one desktop screen (about 70% of its height) */
+@media (min-width: 1024px) {
+  .homer-figure { width: min(100%, 1152px, 128vh); }
+}
+@media (min-width: 768px) {
+  .linkedin-row { width: min(100%, 1155px, 128vh); }
+}
