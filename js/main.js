@@ -249,6 +249,17 @@ var MM = {
       else { wrap.dataset.userPaused = '1'; v.pause(); }
     });
     sync();
+    // Optional sound toggle (Homer reel): muted by default, the visitor opts in
+    var snd = wrap.querySelector('.video-sound');
+    if (snd) {
+      snd.hidden = false;
+      snd.addEventListener('click', function () {
+        v.muted = !v.muted;
+        snd.setAttribute('aria-pressed', v.muted ? 'false' : 'true');
+        snd.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+        if (!v.muted && v.paused) { wrap.dataset.userPaused = '0'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      });
+    }
     if (io && !MM.reduce()) io.observe(v);
   });
   if (MM.mq && MM.mq.addEventListener) MM.mq.addEventListener('change', function () {

@@ -19,7 +19,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236E1423'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Caveat:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Caveat:wght@400&family=Poppins:wght@600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" as="image" href="images/portrait/portrait-662.webp">
   <script>if(!('onpagereveal' in window)&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))document.documentElement.classList.add('js-fade')</script>
@@ -111,11 +111,38 @@
       <div class="container" data-reveal>
         <h2 class="sr-only" id="work-title">Case studies</h2>
         <div class="case-cards">
+          <article class="case-card case-card--featured">
+            <div class="case-card__media homer-card__media" data-video-wrap>
+              <img class="homer-card__bg" src="images/homer/kitchen-760.webp" srcset="images/homer/kitchen-760.webp 760w, images/homer/kitchen-1520.webp 1520w" sizes="(min-width: 1440px) 760px, (min-width: 1024px) 57vw, calc(100vw - 44px)" alt="" width="1520" height="887" loading="lazy">
+              <p class="homer-card__tagline" aria-hidden="true">Know your home<br> by heart.</p>
+              <p class="homer-card__word" aria-hidden="true">homer</p>
+              <div class="homer-card__phone">
+                <video data-video controls muted loop playsinline preload="none" poster="images/homer/reel-poster-540.webp" width="540" height="967" aria-label="Homer reel: a drawer overflowing with receipts empties, and the Homer app keeps them">
+                  <source src="images/homer/homer-reel.mp4" type="video/mp4">
+                </video>
+              </div>
+              <button class="video-toggle" type="button" data-name="Homer reel" aria-pressed="false" aria-label="Play Homer reel" hidden>
+                <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" rx="1" fill="currentColor"/></svg>
+                <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <div class="case-card__body">
+              <p class="t-label accent">Brand &amp; content</p>
+              <h3 class="case-card__title"><a href="homer.html">Homer</a></h3>
+              <p class="muted">Brand &amp; content for a home app: a new visual identity, messaging and ready-to-post social content for homeowners and partners.</p>
+              <p class="t-label muted lines">Self-initiated concept · 2026 · Solo
+Brand &amp; content · Social · Art direction
+2 audiences · 4 content formats · 1 reel</p>
+              <figure class="homer-card__quote"><blockquote>“The Hyper Island team gave us a fresh, outside view of our brand that inspired our current branding.”</blockquote><figcaption class="t-label muted">Wilhelm Lundborg, founder and CEO of Homer</figcaption></figure>
+              <p class="case-card__cta t-label" aria-hidden="true">View case study <span>↗</span></p>
+            </div>
+          </article>
           <article class="case-card">
             <div class="case-card__media">
               <img class="devices" src="images/haglofs/card-devices-1154.webp" srcset="images/haglofs/card-devices-600.webp 600w, images/haglofs/card-devices-1154.webp 1154w" sizes="(min-width: 1024px) 577px, calc(100vw - 74px)" alt="The redesigned Haglöfs product page on a laptop and a phone" width="1154" height="784" loading="lazy">
             </div>
             <div class="case-card__body">
+              <p class="t-label accent">UX/UI &amp; content</p>
               <h3 class="case-card__title"><a href="haglofs.html">Haglöfs</a></h3>
               <p class="muted">A product page redesign that turns dense technical specs into a clear, premium shopping experience, revealing detail only when shoppers want it.</p>
               <p class="t-label muted lines">Client project · via Hyper Island
@@ -133,6 +160,7 @@ UX/UI · Research · Visual design
               </div>
             </div>
             <div class="case-card__body">
+              <p class="t-label accent">UX design</p>
               <h3 class="case-card__title"><a href="mymaria.html">MyMaria</a></h3>
               <p class="muted">A treatment companion app for young people at Maria Ungdom, designed to feel safe, calm and encouraging, from first download to daily check-ins.</p>
               <p class="t-label muted lines">Client project · Maria Ungdom · via Hyper Island

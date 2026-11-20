@@ -19,7 +19,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236E1423'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Caveat:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Caveat:wght@400&family=Poppins:wght@600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script>if(!('onpagereveal' in window)&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))document.documentElement.classList.add('js-fade')</script>
   <script src="js/main.js" defer></script>
@@ -43,7 +43,7 @@
       <div class="container">
         <div class="content-hero__text">
         <h1 class="t-page" id="content-title">Content, made with<br> <span class="accent">UX methods.</span></h1>
-        <p class="t-body-l">I create content the same way I design interfaces: I start with research, create the content, then test it with real people.<br>Before design, I wrote SMS copy and SEO articles and translated three books.</p>
+        <p class="t-body-l">I create content the same way I design interfaces: I start with research, create the content, then test it with real people.<br>Today that means brand messaging and social content. Before design, I wrote SMS copy and SEO articles and translated three books.</p>
         </div>
       </div>
     </section>
@@ -59,6 +59,32 @@
           </div>
         </div>
         <ul class="content-samples">
+          <li class="card content-sample content-sample--wide">
+            <div class="content-sample__media homer-card__media" data-video-wrap>
+              <img class="homer-card__bg" src="images/homer/kitchen-760.webp" srcset="images/homer/kitchen-760.webp 760w, images/homer/kitchen-1520.webp 1520w" sizes="(min-width: 1440px) 760px, (min-width: 1024px) 57vw, calc(100vw - 40px)" alt="" width="1520" height="887" loading="lazy">
+              <p class="homer-card__tagline" aria-hidden="true">Know your home<br> by heart.</p>
+              <p class="homer-card__word" aria-hidden="true">homer</p>
+              <div class="homer-card__phone">
+                <video data-video controls muted loop playsinline preload="none" poster="images/homer/reel-poster-540.webp" width="540" height="967" aria-label="Homer reel: a drawer overflowing with receipts empties, and the Homer app keeps them">
+                  <source src="images/homer/homer-reel.mp4" type="video/mp4">
+                </video>
+              </div>
+              <button class="video-toggle" type="button" data-name="Homer reel" aria-pressed="false" aria-label="Play Homer reel" hidden>
+                <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" rx="1" fill="currentColor"/></svg>
+                <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <div class="content-sample__body">
+              <p class="t-label accent">Brand &amp; content · Homer</p>
+              <h3 class="t-h5">Social content for two audiences</h3>
+                            <dl class="sample-story">
+                <div><dt class="t-label">Goal</dt><dd>Show how the Homer brand sounds in a feed, for homeowners and for realtors and developers.</dd></div>
+                <div><dt class="t-label">Method</dt><dd>I wrote the messaging and content strategy, then made a carousel, LinkedIn posts and a reel, with AI images I art-directed.</dd></div>
+                <div><dt class="t-label">What I learned</dt><dd>AI is great for mood and motion. Real UI and small details still need a designer’s hand.</dd></div>
+              </dl>
+              <a class="link-arrow t-label" href="homer.html"><span class="link-arrow__text">See the case study</span> <span class="link-arrow__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </li>
           <li class="card content-sample">
             <div class="content-sample__media">
               <img src="images/content/ai-closeup-850.webp" srcset="images/content/ai-closeup-425.webp 425w, images/content/ai-closeup-850.webp 850w" sizes="(min-width: 1024px) 425px, (min-width: 640px) 45vw, calc(100vw - 40px)" alt="AI-generated close-up of white down inside the chambers of a black jacket, with an “AI-genererad bild” label on the image" width="850" height="850" loading="lazy">
@@ -118,7 +144,7 @@
           <li class="open-col"><h3 class="t-label accent">Prototyping</h3><p class="t-body-m">Fast mockups and prototypes. This site was designed in Figma and built with Claude Code, an agentic AI coding tool. I set the direction, wrote the content and reviewed every change for design accuracy and accessibility (WCAG 2.2 AA).</p></li>
           <li class="open-col"><h3 class="t-label accent">Images</h3><p class="t-body-m">Image work with AI tools like Magnific, always labelled when it’s AI-generated.</p></li>
         </ul>
-        <a class="link-arrow t-label content-back" href="index.html#work"><span class="link-arrow__text">Back to my UX/UI case studies</span> <span class="link-arrow__arrow" aria-hidden="true">→</span></a>
+        <a class="link-arrow t-label content-back" href="index.html#work"><span class="link-arrow__text">Back to my case studies</span> <span class="link-arrow__arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
