@@ -1646,9 +1646,7 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 }
 
 /* Quote under "The result" */
-.homer-quote { margin-top: 20px; padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-card); }
-.homer-quote blockquote { font-weight: 500; }
-.homer-quote figcaption { margin-top: 10px; }
+.glance .homer-quote { margin-top: 24px; }
 
 /* Shared image treatment */
 .homer-img { width: 100%; height: auto; border-radius: var(--r-card); }
@@ -1787,3 +1785,7 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 @media (min-width: 768px) {
   .linkedin-row { width: min(100%, 1155px, 128vh); }
 }
+
+/* Homer hero tiles sit on the same mist panel as the Haglöfs and MyMaria heroes */
+.homer-hero-panel { padding: 16px; }
+@media (min-width: 1024px) { .homer-hero-panel { padding: 40px; } }
