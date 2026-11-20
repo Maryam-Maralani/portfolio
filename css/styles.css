@@ -1789,3 +1789,14 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 /* Homer hero tiles sit on the same mist panel as the Haglöfs and MyMaria heroes */
 .homer-hero-panel { padding: 16px; }
 @media (min-width: 1024px) { .homer-hero-panel { padding: 40px; } }
+
+/* Website in a browser frame, app screens in phone frames */
+.browser { overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-image); box-shadow: 0 18px 40px -24px rgba(23, 24, 26, .35); }
+.browser__bar { display: flex; gap: 6px; align-items: center; height: 28px; padding: 0 12px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.browser__bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--silver); }
+.browser__shot { display: block; width: 100%; height: auto; }
+.app-screens .phone { max-width: none; }
+.app-screens .phone__screen { aspect-ratio: 390 / 844; }
+.app-screens .phone__screen img { object-fit: cover; object-position: top; }
+.app-screens figure > figcaption { margin-top: 12px; }
+@media (min-width: 1024px) { .web-app-row { align-items: center; } }
