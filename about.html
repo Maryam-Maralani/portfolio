@@ -19,7 +19,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236E1423'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Caveat:wght@400&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" as="image" href="images/portrait/portrait-860.webp">
   <script>if(!('onpagereveal' in window)&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))document.documentElement.classList.add('js-fade')</script>
@@ -32,7 +32,7 @@
     <nav class="container nav" aria-label="Main">
       <a class="nav__brand" href="index.html"><span class="nav__mark" aria-hidden="true"></span>Maryam Maralani</a>
       <ul class="nav__links">
-        <li><a class="nav__link" href="index.html#work">Case studies</a></li><li><a class="nav__link" href="content.html">Content</a></li><li><a class="nav__link" href="about.html" aria-current="page">About</a></li><li><a class="nav__link" href="cv.html">CV</a></li><li><a class="nav__cta" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="index.html#work">Case studies</a></li><li><a class="nav__link" href="about.html" aria-current="page">About</a></li><li><a class="nav__link" href="cv.html">CV</a></li><li><a class="nav__cta" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -71,7 +71,7 @@
           <div class="timeline__line" aria-hidden="true"></div>
           <ol class="timeline__cards">
             <li class="card timeline__card"><span class="timeline__dot" aria-hidden="true"></span><p class="t-label accent">2009 – 2015</p><h3 class="t-h5">Law</h3><p class="timeline__lesson">Taught me precision</p><p class="t-small muted">LL.B and LL.M in International Law, Tehran. I read the fine print, so I notice rules and edge cases.</p></li>
-            <li class="card timeline__card"><span class="timeline__dot" aria-hidden="true"></span><p class="t-label accent">2015 – 2019</p><h3 class="t-h5">Words</h3><p class="timeline__lesson">Taught me clarity</p><p class="t-small muted">SMS copy at SabaIdea, SEO articles for Faramohtava and three translated books. Say more with less.</p></li>
+            <li class="card timeline__card"><span class="timeline__dot" aria-hidden="true"></span><p class="t-label accent">2015 – 2019</p><h3 class="t-h5">Words</h3><p class="timeline__lesson">Taught me clarity</p><p class="t-small muted">SMS copy at SabaIdea, SEO articles for Faramohtava and three translated novels. I retold English stories in each writer’s tone so they felt natural to Persian readers. Every word matters, in a book or in a button.</p><p class="t-small muted">Published as Maryam Hajialireza · <a class="link-arrow t-label timeline__link" href="https://www.goodreads.com/author/show/15253798.Maryam_Hajialireza" target="_blank" rel="noopener"><span class="link-arrow__text">See them on Goodreads</span> <span class="link-arrow__arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p></li>
             <li class="card timeline__card"><span class="timeline__dot" aria-hidden="true"></span><p class="t-label accent">2015 – 2021</p><h3 class="t-h5">Compliance</h3><p class="timeline__lesson">Taught me to make rules usable</p><p class="t-small muted">Legal Coordinator → Senior Coordinator, SGS. I turned regulations into training people could actually use.</p></li>
             <li class="card timeline__card"><span class="timeline__dot" aria-hidden="true"></span><p class="t-label accent">2024 – 2027</p><h3 class="t-h5">Design</h3><p class="timeline__lesson">Where it all comes together</p><p class="t-small muted">Digital Creative, Hyper Island, Stockholm. Research, UX/UI and content in one loop.</p></li>
           </ol>
@@ -104,6 +104,18 @@
           <div class="open-col"><h3 class="t-label accent">Toolkit</h3><ul class="t-body-m"><li>Figma</li><li>User research &amp; interviews</li><li>Usability testing</li><li>Journey mapping &amp; personas</li><li>Wireframing &amp; prototyping</li><li>HTML &amp; CSS (basic)</li><li>AI: Claude, ChatGPT, Magnific</li></ul></div>
           <div class="open-col"><h3 class="t-label accent">Looking for</h3><p class="t-body-m">Especially drawn to products and content where complex information needs to feel clear and human.</p></div>
         </div>
+      </div>
+    </section>
+
+    <!-- 05 How I use AI (moved from the Content page) -->
+    <section class="section section--light ai-use" aria-labelledby="ai-title">
+      <div class="container" data-reveal>
+        <h2 class="t-h2 ai-use__title" id="ai-title">AI is my studio<br> assistant.<span class="hand-note" data-hand aria-hidden="true"><svg class="hand-note__arrow" viewBox="0 26 64 34" focusable="false"><path pathLength="1" d="M60 34C44 30 22 36 8 52"/><path pathLength="1" d="M6 40L8 53L20 50"/></svg><span class="hand hand__ink">I’m still the designer ;)</span></span></h2>
+        <ul class="grid grid--3 ai-use__cols">
+          <li class="open-col"><h3 class="t-label accent">Research</h3><p class="t-body-m">Claude and ChatGPT help me plan research and cluster findings.</p></li>
+          <li class="open-col"><h3 class="t-label accent">Prototyping</h3><p class="t-body-m">Fast mockups and prototypes. This site was designed in Figma and built with Claude Code. I set the direction, wrote the content and reviewed every change for design and accessibility (WCAG 2.2 AA).</p></li>
+          <li class="open-col"><h3 class="t-label accent">Images</h3><p class="t-body-m">AI tools like Magnific, always labelled when an image is AI-generated.</p></li>
+        </ul>
       </div>
     </section>
   </main>
