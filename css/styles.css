@@ -1806,3 +1806,6 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 /* About timeline: Goodreads link inside the Words card (underlined so it reads as a link without relying on colour) */
 .timeline__link { min-height: 24px; gap: 6px; }
 .timeline__link .link-arrow__text { text-decoration: underline; text-underline-offset: 3px; }
+
+/* About story: translator lead (moved from the homepage) */
+.story__lead strong { font-weight: 500; color: var(--ink, inherit); }
