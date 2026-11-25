@@ -817,7 +817,7 @@ button { font: inherit; color: inherit; }
   border-color: var(--silver);
 }
 .case-card:hover .case-card__media > *, .case-card:focus-within .case-card__media > * { transform: scale(1.03); }
-.case-card:hover .case-card__cta span, .case-card:focus-within .case-card__cta span { transform: translate(3px, -3px); }
+.case-card:hover .case-card__cta span, .case-card:focus-within .case-card__cta span { transform: translateX(4px); }
 .case-card:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
 .case-card :focus-visible { outline: none; }
 
@@ -1802,3 +1802,10 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .glance__result { grid-column: 3; grid-row: 1 / span 2; }
   .glance__swatch { grid-column: 1 / span 2; grid-row: 2; align-self: end; }
 }
+
+/* About timeline: Goodreads link inside the Words card (underlined so it reads as a link without relying on colour) */
+.timeline__link { min-height: 24px; gap: 6px; }
+.timeline__link .link-arrow__text { text-decoration: underline; text-underline-offset: 3px; }
+
+/* About story: translator lead (moved from the homepage) */
+.story__lead strong { font-weight: 500; color: var(--ink, inherit); }
