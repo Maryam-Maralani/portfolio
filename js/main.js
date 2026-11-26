@@ -343,3 +343,20 @@ var MM = {
   items.forEach(function (el) { io.observe(el); });
   window.addEventListener('beforeprint', function () { items.forEach(function (el) { el.classList.add('is-in'); }); });
 })();
+
+/* MyMaria: "See the full journey" toggle (without JS, the full journey shows) */
+(function () {
+  var list = document.getElementById('journey-stages');
+  var btn = document.querySelector('.journey__toggle');
+  if (!list || !btn) return;
+  document.documentElement.classList.add('js-journey');
+  btn.hidden = false;
+  var text = btn.querySelector('.link-arrow__text');
+  var arrow = btn.querySelector('.link-arrow__arrow');
+  btn.addEventListener('click', function () {
+    var open = list.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    text.textContent = open ? 'Show less' : 'See the full journey';
+    arrow.textContent = open ? '↑' : '↓';
+  });
+})();

@@ -1840,3 +1840,16 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .inclusive { padding-block: 56px; }
   .inclusive__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; }
 }
+
+/* MyMaria journey: short by default (pain point + opportunity), full journey on demand */
+.js-journey .journey:not(.is-open) .is-extra { display: none; }
+.journey__toggle { margin-top: 32px; background: none; border: 0; padding: 0; cursor: pointer; }
+@media (min-width: 1024px) {
+  .js-journey .journey:not(.is-open) { grid-template-rows: repeat(3, auto); }
+  .js-journey .journey:not(.is-open) .stage { grid-row: span 3; }
+}
+/* Journey intro already has its own columns: keep its section head stacked */
+@media (min-width: 1024px) {
+  .journey-intro .section-head:has(> h2 + p) { display: block; }
+  .journey-intro .section-head:has(> h2 + p) > h2 + p { margin-top: 24px; }
+}

@@ -174,7 +174,7 @@
         </div>
         <div class="journey__head">
           <h3 class="t-h3">Journey highlights</h3>
-          <p class="t-label muted" id="feel-label">How Alex feels at each stage</p>
+          <p class="t-label muted" id="feel-label">How Alex feels at each stage · pain points and opportunities</p>
         </div>
         <div class="curve" data-draw role="img" aria-labelledby="feel-label curve-desc">
           <span class="sr-only" id="curve-desc">Resistant, then uncertain, then doubt turning to hope, mostly positive, and finally accomplished.</span>
@@ -183,43 +183,44 @@
           </svg>
           <div aria-hidden="true"><span class="curve__mood" style="--i:0;--top:64px">Resistant</span><span class="curve__dot" style="--i:0;--top:91px"></span><span class="curve__mood" style="--i:1;--top:50px">Uncertain</span><span class="curve__dot" style="--i:1;--top:77px"></span><span class="curve__mood" style="--i:2;--top:36px">Doubt → hope</span><span class="curve__dot" style="--i:2;--top:63px"></span><span class="curve__mood" style="--i:3;--top:22px">Mostly positive</span><span class="curve__dot" style="--i:3;--top:49px"></span><span class="curve__mood" style="--i:4;--top:8px">Accomplished</span><span class="curve__dot" style="--i:4;--top:35px"></span></div>
         </div>
-        <ol class="journey">
+        <ol class="journey" id="journey-stages">
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">01</p><h4 class="t-h5">Recommendation</h4><p class="stage__mood t-quote-s">Resistant</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Hears about the app from his therapist and asks questions about it.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Why should I download an app on my phone? Will I be tracked?”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Hears about the app from his therapist and asks questions about it.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Why should I download an app on my phone? Will I be tracked?”</p></div>
             <div class="card"><p class="t-label muted">Pain point</p><p>Doesn’t trust the app and hesitates to download it.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Say clearly that data stays confidential and nothing is tracked outside the app.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">02</p><h4 class="t-h5">Download</h4><p class="stage__mood t-quote-s">Uncertain</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Finds the link on Maria Ungdom’s website and downloads it from the app store.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I hope this app works for me.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Finds the link on Maria Ungdom’s website and downloads it from the app store.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I hope this app works for me.”</p></div>
             <div class="card"><p class="t-label muted">Goal</p><p>Download without complications and feel like a step forward in treatment.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Keep the path from link to first screen short, calm and safe-feeling.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">03</p><h4 class="t-h5">Onboarding</h4><p class="stage__mood t-quote-s">Doubt → hope</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Signs in with BankID, follows setup and sets reminders for tasks and meetings.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Is it going to work? I hope it makes treatment easier.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Signs in with BankID, follows setup and sets reminders for tasks and meetings.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Is it going to work? I hope it makes treatment easier.”</p></div>
             <div class="card"><p class="t-label muted">Pain point</p><p>Doesn’t understand how the app works, or when reminders suit him.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Short, clear explanations and fully customisable notifications.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">04</p><h4 class="t-h5">Reuse</h4><p class="stage__mood t-quote-s">Mostly positive</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Does daily tasks, tracks progress and reschedules meetings in the app.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“This is cute and helpful, but I hate doing tasks every day.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Does daily tasks, tracks progress and reschedules meetings in the app.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“This is cute and helpful, but I hate doing tasks every day.”</p></div>
             <div class="card"><p class="t-label muted">Pain point</p><p>Long shifts leave little energy to engage with treatment.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Ask users and therapists for feedback to keep refining the experience.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">05</p><h4 class="t-h5">Loyalty &amp; Retention</h4><p class="stage__mood t-quote-s">Accomplished</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Keeps journaling after tasks end and fine-tunes smart reminders.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I feel a sense of accomplishment.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Keeps journaling after tasks end and fine-tunes smart reminders.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I feel a sense of accomplishment.”</p></div>
             <div class="card"><p class="t-label muted">Goal</p><p>Feel more involved in, and in control of, his treatment.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Smart reminders that adapt as his routine settles.</p></div>
           </li>
         </ol>
+        <button class="link-arrow t-label journey__toggle" type="button" aria-expanded="false" aria-controls="journey-stages" hidden><span class="link-arrow__text">See the full journey</span> <span class="link-arrow__arrow link-arrow__arrow--down" aria-hidden="true">↓</span></button>
       </div>
     </section>
 
