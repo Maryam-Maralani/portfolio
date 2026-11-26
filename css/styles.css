@@ -1826,9 +1826,9 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 }
 
 /* MyMaria: "Solve for one, extend to many" with a ripple diagram */
-.inclusive { padding-block: 48px; }
+.inclusive { padding-block: 40px; }
 .inclusive__grid { display: grid; gap: 40px; align-items: center; }
-.ripple { margin: 0 auto; width: min(100%, 420px); }
+.ripple { margin: 0 auto; width: min(100%, 320px); }
 .ripple__ring { border-radius: 50%; display: flex; flex-direction: column; align-items: center; aspect-ratio: 1; }
 .ripple__ring--3 { width: 100%; background: var(--surface); padding-top: 6%; }
 .ripple__ring--2 { width: 74%; background: #DCE3EB; padding-top: 7%; margin-top: 3%; }
@@ -1837,7 +1837,7 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .ripple__core-label { color: rgba(255, 255, 255, .85); }
 .ripple__core { font-size: clamp(18px, 1.6vw, 22px); font-weight: 500; line-height: 1.2; }
 @media (min-width: 1024px) {
-  .inclusive { padding-block: 56px; }
+  .inclusive { padding-block: 48px; }
   .inclusive__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; }
 }
 
@@ -1864,3 +1864,11 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .fit-mm .feature--teacch { grid-template-columns: minmax(0, 650px) 240px; padding: 24px 48px; }
   .fit-mm .annotated { max-width: 240px; }
 }
+
+/* MyMaria co-occurrence: text left, compact stats right */
+.cooccur__grid { display: grid; gap: 32px; align-items: center; }
+.stats--stack { gap: 16px; }
+.stats--stack .stat { padding: 20px 24px; background: var(--white); border-radius: var(--r-card); }
+.stats--stack .stat__num { font-size: clamp(40px, 3.9vw, 56px); }
+@media (min-width: 768px) { .stats.stats--stack { grid-template-columns: 1fr; gap: 16px; } }
+@media (min-width: 1024px) { .cooccur__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
