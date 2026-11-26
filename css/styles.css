@@ -1815,7 +1815,7 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .colour-story > * + * { margin-top: 8px; }
 
 /* Homer hero: brand key visual (navy panel, tagline, dishwasher) */
-.homer-key { position: relative; overflow: hidden; display: grid; align-items: center; gap: 8px; padding: 32px 24px 0; background: #213E5A; border-radius: var(--r-image); color: #fff; font-family: 'Poppins', var(--font); }
+.homer-key { position: relative; overflow: hidden; display: grid; align-items: center; gap: 8px; padding: 32px 24px 0; background: #223D59; border-radius: var(--r-image); color: #fff; font-family: 'Poppins', var(--font); }
 .homer-key__circle { position: absolute; border-radius: 50%; }
 .homer-key__circle--teal { width: 120px; height: 120px; right: -44px; top: -64px; background: #57A99A; }
 .homer-key__circle--amber { width: 34px; height: 34px; right: 10px; top: 14px; background: #F0A501; z-index: 1; }
