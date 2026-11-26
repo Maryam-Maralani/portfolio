@@ -81,8 +81,8 @@
     <section class="section section--light" aria-labelledby="m-decisions" style="padding-top:0">
       <div class="container" data-reveal>
         <div class="section-head">
-          <p class="section-label t-label"><span>My decisions</span></p>
-          <h2 class="t-h2" id="m-decisions">Four decisions my research drove.</h2>
+          <p class="section-label t-label"><span>Decisions</span></p>
+          <h2 class="t-h2" id="m-decisions">Decisions driven by research.</h2>
           <p class="t-body-l" style="max-width:820px">Maria Ungdom wanted young people to engage more with their treatment plans. Our team designed an app that breaks treatment into small steps. As the UX designer, I ran the expert interviews and desk research, mapped the user journey, tested the prototype and designed the final presentation.</p>
         </div>
         <ol class="grid grid--2 decisions">
@@ -104,24 +104,36 @@
           <p class="t-body-l" style="max-width:980px">In the desk research and expert interviews we realized that there is meaningful co-occurrence between addiction and neurodivergency.</p>
         </div>
       </div>
-      <div class="container research-block" data-reveal>
-        <div class="stack">
-          <h3 class="t-label accent">Desk research · Co-occurrence</h3>
-          <p class="t-h4" style="font-weight:500">Co-occurrence between addiction and psychiatric or neurodevelopmental disorders.</p>
-          <div class="stats">
+      <div class="container research-block cooccur" data-reveal>
+        <div class="cooccur__grid">
+          <div class="stack">
+            <h3 class="t-label accent">Desk research · Co-occurrence</h3>
+            <p class="t-h4" style="font-weight:500">Co-occurrence between addiction and psychiatric or neurodevelopmental disorders.</p>
+            <p class="t-body-l">Design implication: make it easier to plan, understand the next step and begin treatment activities.</p>
+            <p class="t-caption">Ages 10–17 in the studied care population: substance-related care in 2017, with psychiatric diagnoses recorded during 2016–2018. Socialstyrelsen, 2019, p. 39. These figures describe co-occurrence; they do not establish causation.</p>
+          </div>
+          <div class="stats stats--stack">
             <div class="stat"><p class="stat__num t-numeral">≈34%<span> ADHD</span></p><p class="t-body-m">34.2% of boys · 34.0% of girls</p></div>
             <div class="stat"><p class="stat__num t-numeral">8.0–8.8%<span> Autism</span></p><p class="t-body-m">8.0% of boys · 8.8% of girls</p></div>
           </div>
-          <p class="t-caption">Ages 10–17 in the studied care population: substance-related care in 2017, with psychiatric diagnoses recorded during 2016–2018. Socialstyrelsen, 2019, p. 39. These figures describe co-occurrence; they do not establish causation.</p>
-          <p class="t-body-l">Design implication: make it easier to plan, understand the next step and begin treatment activities.</p>
         </div>
       </div>
-      <div class="band-white research-block" data-reveal>
-        <div class="container stack">
-          <h3 class="t-label accent">Inclusive design</h3>
-          <p class="t-h3">Solve for one, extend to many.</p>
-          <p class="t-body-l">We designed around neurodivergent needs for structure and guidance, with the intention of also supporting people who feel stressed, distracted or unfamiliar with treatment.</p>
-          <p class="t-caption">Microsoft Inclusive Design</p>
+      <div class="band-white research-block inclusive" data-reveal>
+        <div class="container inclusive__grid">
+          <div class="stack">
+            <h3 class="t-label accent">Inclusive design</h3>
+            <p class="t-h3">Solve for one, extend to many.</p>
+            <p class="t-body-l">We designed around neurodivergent needs for structure and guidance, with the intention of also supporting people who feel stressed, distracted or unfamiliar with treatment.</p>
+            <p class="t-caption">Principle from Microsoft Inclusive Design</p>
+          </div>
+          <figure class="ripple">
+            <figcaption class="sr-only">Diagram: three circles inside each other. Designed for neurodivergent needs in the centre, extending to people who feel stressed or distracted, and to people new to treatment.</figcaption>
+            <div class="ripple__ring ripple__ring--3"><span class="ripple__label t-label">New to treatment</span>
+              <div class="ripple__ring ripple__ring--2"><span class="ripple__label t-label">Stressed or distracted</span>
+                <div class="ripple__ring ripple__ring--1"><span class="ripple__core-label t-label">Designed for</span><span class="ripple__core">Neuro&shy;divergent needs</span></div>
+              </div>
+            </div>
+          </figure>
         </div>
       </div>
       <div class="container research-block" data-reveal>
@@ -164,7 +176,7 @@
         </div>
         <div class="journey__head">
           <h3 class="t-h3">Journey highlights</h3>
-          <p class="t-label muted" id="feel-label">How Alex feels at each stage</p>
+          <p class="t-label muted" id="feel-label">How Alex feels at each stage · pain points and opportunities</p>
         </div>
         <div class="curve" data-draw role="img" aria-labelledby="feel-label curve-desc">
           <span class="sr-only" id="curve-desc">Resistant, then uncertain, then doubt turning to hope, mostly positive, and finally accomplished.</span>
@@ -173,43 +185,44 @@
           </svg>
           <div aria-hidden="true"><span class="curve__mood" style="--i:0;--top:64px">Resistant</span><span class="curve__dot" style="--i:0;--top:91px"></span><span class="curve__mood" style="--i:1;--top:50px">Uncertain</span><span class="curve__dot" style="--i:1;--top:77px"></span><span class="curve__mood" style="--i:2;--top:36px">Doubt → hope</span><span class="curve__dot" style="--i:2;--top:63px"></span><span class="curve__mood" style="--i:3;--top:22px">Mostly positive</span><span class="curve__dot" style="--i:3;--top:49px"></span><span class="curve__mood" style="--i:4;--top:8px">Accomplished</span><span class="curve__dot" style="--i:4;--top:35px"></span></div>
         </div>
-        <ol class="journey">
+        <ol class="journey" id="journey-stages">
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">01</p><h4 class="t-h5">Recommendation</h4><p class="stage__mood t-quote-s">Resistant</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Hears about the app from his therapist and asks questions about it.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Why should I download an app on my phone? Will I be tracked?”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Hears about the app from his therapist and asks questions about it.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Why should I download an app on my phone? Will I be tracked?”</p></div>
             <div class="card"><p class="t-label muted">Pain point</p><p>Doesn’t trust the app and hesitates to download it.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Say clearly that data stays confidential and nothing is tracked outside the app.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">02</p><h4 class="t-h5">Download</h4><p class="stage__mood t-quote-s">Uncertain</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Finds the link on Maria Ungdom’s website and downloads it from the app store.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I hope this app works for me.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Finds the link on Maria Ungdom’s website and downloads it from the app store.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I hope this app works for me.”</p></div>
             <div class="card"><p class="t-label muted">Goal</p><p>Download without complications and feel like a step forward in treatment.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Keep the path from link to first screen short, calm and safe-feeling.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">03</p><h4 class="t-h5">Onboarding</h4><p class="stage__mood t-quote-s">Doubt → hope</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Signs in with BankID, follows setup and sets reminders for tasks and meetings.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Is it going to work? I hope it makes treatment easier.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Signs in with BankID, follows setup and sets reminders for tasks and meetings.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“Is it going to work? I hope it makes treatment easier.”</p></div>
             <div class="card"><p class="t-label muted">Pain point</p><p>Doesn’t understand how the app works, or when reminders suit him.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Short, clear explanations and fully customisable notifications.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">04</p><h4 class="t-h5">Reuse</h4><p class="stage__mood t-quote-s">Mostly positive</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Does daily tasks, tracks progress and reschedules meetings in the app.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“This is cute and helpful, but I hate doing tasks every day.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Does daily tasks, tracks progress and reschedules meetings in the app.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“This is cute and helpful, but I hate doing tasks every day.”</p></div>
             <div class="card"><p class="t-label muted">Pain point</p><p>Long shifts leave little energy to engage with treatment.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Ask users and therapists for feedback to keep refining the experience.</p></div>
           </li>
           <li class="stage">
             <div class="stage__head"><p class="t-label accent">05</p><h4 class="t-h5">Loyalty &amp; Retention</h4><p class="stage__mood t-quote-s">Accomplished</p></div>
-            <div class="card"><p class="t-label muted">Doing</p><p>Keeps journaling after tasks end and fine-tunes smart reminders.</p></div>
-            <div class="card"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I feel a sense of accomplishment.”</p></div>
+            <div class="card is-extra"><p class="t-label muted">Doing</p><p>Keeps journaling after tasks end and fine-tunes smart reminders.</p></div>
+            <div class="card is-extra"><p class="t-label muted">Feeling</p><p class="t-quote-s">“I feel a sense of accomplishment.”</p></div>
             <div class="card"><p class="t-label muted">Goal</p><p>Feel more involved in, and in control of, his treatment.</p></div>
             <div class="card is-opportunity"><p class="t-label">Opportunity</p><p>Smart reminders that adapt as his routine settles.</p></div>
           </li>
         </ol>
+        <button class="link-arrow t-label journey__toggle" type="button" aria-expanded="false" aria-controls="journey-stages" hidden><span class="link-arrow__text">See the full journey</span> <span class="link-arrow__arrow link-arrow__arrow--down" aria-hidden="true">↓</span></button>
       </div>
     </section>
 
@@ -234,7 +247,8 @@
           <img class="annotated" src="images/mymaria/home-annotated-600.webp" srcset="images/mymaria/home-annotated-300.webp 300w, images/mymaria/home-annotated-600.webp 600w" sizes="(min-width: 1024px) 300px, min(420px, calc(100vw - 80px))" alt="The MyMaria home screen with numbered markers showing where each of the seven questions is answered: the current assignment, the meeting address, the therapist, the meeting time, the upcoming meeting, the Panic Journal card and the Learn tab" width="600" height="1027" loading="lazy">
         </div>
 
-        <div class="feature" style="margin-top:30px">
+        <div class="feature-pair">
+        <div class="feature">
           <figure class="phone" data-video-wrap>
             <span class="phone__island" aria-hidden="true"></span>
             <div class="phone__screen">
@@ -280,6 +294,7 @@
             </button>
             <figcaption class="sr-only">Notification settings walkthrough: from Jane’s menu to choosing smart or manual reminders</figcaption>
           </figure>
+        </div>
         </div>
       </div>
     </section>

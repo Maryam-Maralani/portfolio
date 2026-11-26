@@ -41,20 +41,20 @@
   --mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
   /* Type scale — mobile values first, desktop values reached at 1440px */
-  --t-hero: clamp(56px, 9.93vw, 143px);     /* Display / Hero 143 */
-  --t-numeral: clamp(56px, 6.67vw, 96px);   /* Numeral 96 */
-  --t-page: clamp(40px, 5.56vw, 80px);      /* Page title 80 */
-  --t-h1: clamp(40px, 3.9vw, 56px);         /* H1 56 */
-  --t-h2: clamp(30px, 3.34vw, 48px);        /* H2 48 */
-  --t-h3: clamp(30px, 2.78vw, 40px);        /* H3 40 */
-  --t-h4: clamp(24px, 2.09vw, 30px);        /* H4 30 */
-  --t-h5: clamp(22px, 1.67vw, 24px);        /* H5 24 */
-  --t-h6: 20px;                             /* H6 20 */
-  --t-quote-l: clamp(24px, 2.64vw, 38px);   /* Quote L 38 */
-  --t-quote-m: clamp(22px, 1.875vw, 27px);  /* Quote M 27 */
-  --t-quote-s: 22px;                        /* Quote S 22 */
-  --t-body-xl: clamp(18px, 1.39vw, 20px);   /* Body XL 20 */
-  --t-body-l: 18px;
+  --t-hero: clamp(56px, 8.33vw, 120px);     /* Display / Hero 120 */
+  --t-numeral: clamp(48px, 5.56vw, 80px);   /* Numeral 80 */
+  --t-page: clamp(40px, 4.44vw, 64px);      /* Page title 64 */
+  --t-h1: clamp(36px, 3.33vw, 48px);        /* H1 48 */
+  --t-h2: clamp(28px, 2.78vw, 40px);        /* H2 40 */
+  --t-h3: clamp(26px, 2.22vw, 32px);        /* H3 32 */
+  --t-h4: clamp(22px, 1.81vw, 26px);        /* H4 26 */
+  --t-h5: clamp(20px, 1.53vw, 22px);        /* H5 22 */
+  --t-h6: 18px;                             /* H6 18 */
+  --t-quote-l: clamp(22px, 2.22vw, 32px);   /* Quote L 32 */
+  --t-quote-m: clamp(20px, 1.67vw, 24px);   /* Quote M 24 */
+  --t-quote-s: 20px;                        /* Quote S 20 */
+  --t-body-xl: clamp(17px, 1.25vw, 18px);   /* Body XL 18 */
+  --t-body-l: 17px;
   --t-body-m: 17px;
   --t-body: 16px;
   --t-small: 14px;
@@ -69,7 +69,7 @@
 
   /* Spacing */
   --gutter: 20px;
-  --section-y: 56px;
+  --section-y: 48px;
   --card-pad: 20px;
 
   --ease: cubic-bezier(.22, .61, .36, 1);
@@ -79,7 +79,7 @@
 @media (min-width: 1024px) {
   :root {
     --gutter: 56px;
-    --section-y: 96px;
+    --section-y: 72px;
     --card-pad: 24px;
   }
 }
@@ -244,7 +244,7 @@ button { font: inherit; color: inherit; }
 .section-head > * + * { margin-top: 24px; }
 .section-head + * { margin-top: 32px; }
 @media (min-width: 1024px) {
-  .section-head + * { margin-top: 48px; }
+  .section-head + * { margin-top: 40px; }
 }
 
 /* Text link with an arrow (mono, burgundy) */
@@ -554,7 +554,7 @@ button { font: inherit; color: inherit; }
 .site-footer__bottom { color: var(--silver); }
 
 @media (min-width: 1024px) {
-  .site-footer { padding-block: 135px 40px; }
+  .site-footer { padding-block: 96px 40px; }
   .site-footer__row { flex-direction: row; justify-content: space-between; align-items: flex-end; margin-top: 40px; }
   .site-footer__bottom { flex-direction: row; justify-content: space-between; margin-top: 56px; }
 }
@@ -912,7 +912,7 @@ button { font: inherit; color: inherit; }
   .story .timeline { margin-top: 56px; }
   .story .timeline__card { padding: 20px 24px; }
   .section.photo-section { padding-block: 64px; }
-  .section.details { padding-block: 120px; }
+  .section.details { padding-block: var(--section-y); }
 }
 
 /* Photography: text + clean 2×2 gallery */
@@ -1117,7 +1117,7 @@ button { font: inherit; color: inherit; }
 .outcome__learned strong { display: block; font-weight: 400; color: var(--ink); }
 .outcome__learned span { color: var(--accent); }
 @media (min-width: 1024px) {
-  .outcome-section { padding-block: 82px 96px; }
+  .outcome-section { padding-block: var(--section-y); }
   .outcome { grid-template-columns: minmax(0, 760px) minmax(0, 500px); justify-content: space-between; column-gap: 64px; }
   .outcome .t-h2 { grid-column: 1 / -1; max-width: 980px; margin-bottom: 40px; }
 }
@@ -1148,9 +1148,9 @@ button { font: inherit; color: inherit; }
 .band-white { background: var(--white); padding-block: 64px; }
 @media (min-width: 1024px) { .band-white { padding-block: 96px; } }
 .research-block + .research-block { margin-top: 64px; }
-@media (min-width: 1024px) { .research-block + .research-block { margin-top: 96px; } }
-.research-section { padding-block: 96px; }
-@media (min-width: 1024px) { .research-section { padding-block: 160px; } }
+@media (min-width: 1024px) { .research-block + .research-block { margin-top: 64px; } }
+.research-section { padding-block: var(--section-y); }
+
 
 /* MyMaria: journey map */
 .journey-intro { display: grid; gap: 24px; align-items: start; }
@@ -1381,7 +1381,7 @@ button { font: inherit; color: inherit; }
 .q1 .test > * + * { margin-top: 14px; }
 .q1 .test figcaption { max-width: 520px; }
 @media (min-width: 1024px) {
-  .section.q1 { padding-block: 88px; }
+  .section.q1 { padding-block: var(--section-y); }
   .q1 .section-head > * + * { margin-top: 20px; }
   .q1 .section-head + * { margin-top: 40px; }
   .q1 .section-head:has(> h2 + p) {
@@ -1581,7 +1581,7 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .ai-use__cols { margin-top: 32px; }
 .content-back { display: inline-flex; margin-top: 40px; }
 @media (min-width: 1024px) {
-  .section.ai-use { padding-block: 120px; }
+  .section.ai-use { padding-block: var(--section-y); }
   .ai-use__cols { margin-top: 48px; }
   .content-back { margin-top: 48px; }
 }
@@ -1653,9 +1653,9 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .homer-img--line { border: 1px solid var(--line); }
 .homer-figure figcaption, .linkedin-row figcaption, .web-app-row figcaption,
 .reel__stills figcaption, .before-after figcaption { margin-top: 12px; }
-.homer-subhead { display: grid; gap: 8px; margin-top: 56px; margin-bottom: 24px; font-weight: 400; }
+.homer-subhead { display: grid; gap: 8px; margin-top: 40px; margin-bottom: 24px; font-weight: 400; }
 .homer-subhead .t-h5 { font-weight: 500; }
-@media (min-width: 1024px) { .homer-subhead { margin-top: 72px; } }
+@media (min-width: 1024px) { .homer-subhead { margin-top: 48px; } }
 
 /* 01: brandbook excerpts + bridge */
 .excerpts .card > * + * { margin-top: 10px; }
@@ -1810,6 +1810,68 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 /* About story: translator lead (moved from the homepage) */
 .story__lead strong { font-weight: 500; color: var(--ink, inherit); }
 
+/* Section heads on desktop: intro sits next to the heading, so the width is used */
+@media (min-width: 1024px) {
+  .section-head:has(> h2 + p) { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 64px; align-items: end; }
+  .section-head:has(> h2 + p) > * { grid-column: 1 / -1; }
+  .section-head:has(> h2 + p) > h2 { grid-column: 1; }
+  .section-head:has(> h2 + p) > h2 + p { grid-column: 2; margin-top: 0; max-width: none !important; }
+  .section-head:has(> h2 + p) > .colour-story { grid-column: 2; }
+}
+
+/* MyMaria testing: its before/after cards must not use Homer's image layout */
+.testing-grid > .before-after { margin-top: 0; align-items: stretch; }
+@media (min-width: 640px) {
+  .testing-grid > .before-after { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+}
+
+/* MyMaria: "Solve for one, extend to many" with a ripple diagram */
+.inclusive { padding-block: 40px; }
+.inclusive__grid { display: grid; gap: 40px; align-items: center; }
+.ripple { margin: 0 auto; width: min(100%, 320px); }
+.ripple__ring { border-radius: 50%; display: flex; flex-direction: column; align-items: center; aspect-ratio: 1; }
+.ripple__ring--3 { width: 100%; background: var(--surface); padding-top: 6%; }
+.ripple__ring--2 { width: 74%; background: #DCE3EB; padding-top: 7%; margin-top: 3%; }
+.ripple__ring--1 { width: 64%; background: var(--accent); color: #fff; justify-content: center; text-align: center; margin-top: 5%; padding: 8%; gap: 6px; }
+.ripple__label { color: var(--ink); }
+.ripple__core-label { color: rgba(255, 255, 255, .85); }
+.ripple__core { font-size: clamp(18px, 1.6vw, 22px); font-weight: 500; line-height: 1.2; }
+@media (min-width: 1024px) {
+  .inclusive { padding-block: 48px; }
+  .inclusive__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; }
+}
+
+/* MyMaria journey: short by default (pain point + opportunity), full journey on demand */
+.js-journey .journey:not(.is-open) .is-extra { display: none; }
+.journey__toggle { margin-top: 32px; background: none; border: 0; padding: 0; cursor: pointer; }
+@media (min-width: 1024px) {
+  .js-journey .journey:not(.is-open) { grid-template-rows: repeat(3, auto); }
+  .js-journey .journey:not(.is-open) .stage { grid-row: span 3; }
+}
+/* Journey intro already has its own columns: keep its section head stacked */
+@media (min-width: 1024px) {
+  .journey-intro .section-head:has(> h2 + p) { display: block; }
+  .journey-intro .section-head:has(> h2 + p) > h2 + p { margin-top: 24px; }
+}
+
+/* MyMaria design application: two examples side by side, smaller phones */
+.feature-pair { display: grid; gap: 24px; margin-top: 24px; }
+.feature-pair .feature + .feature { margin-top: 0; }
+@media (min-width: 1024px) {
+  .feature-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fit-mm .feature-pair .feature, .fit-mm .feature-pair .feature--flip { grid-template-columns: 200px minmax(0, 1fr) !important; gap: 32px; padding: 28px 32px; align-items: start; }
+  .fit-mm .feature-pair .feature .phone { max-width: 200px; order: -1; }
+  .fit-mm .feature--teacch { grid-template-columns: minmax(0, 650px) 240px; padding: 24px 48px; }
+  .fit-mm .annotated { max-width: 240px; }
+}
+
+/* MyMaria co-occurrence: text left, compact stats right */
+.cooccur__grid { display: grid; gap: 32px; align-items: center; }
+.stats--stack { gap: 16px; }
+.stats--stack .stat { padding: 20px 24px; background: var(--white); border-radius: var(--r-card); }
+.stats--stack .stat__num { font-size: clamp(40px, 3.9vw, 56px); }
+@media (min-width: 768px) { .stats.stats--stack { grid-template-columns: 1fr; gap: 16px; } }
+@media (min-width: 1024px) { .cooccur__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
 /* Homer: "Warm meets smart" colour story under the audiences intro */
 .colour-story { max-width: 820px; }
 .colour-story > * + * { margin-top: 8px; }
