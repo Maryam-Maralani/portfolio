@@ -1851,9 +1851,16 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 
 /* Stylescape: whole image + caption fits in one desktop screen */
 @media (min-width: 1024px) {
-  .homer-figure--fit { max-width: min(100%, 1152px, calc((100vh - 140px) * 16 / 9)); margin: 48px auto 0; }
+  .homer-figure--fit { max-width: min(100%, 960px, calc((100vh - 140px) * 16 / 9)); margin: 48px auto 0; }
 }
 /* LinkedIn pair: both posts + captions fit in one desktop screen */
 @media (min-width: 1024px) {
   .linkedin-row { max-width: min(100%, 1152px, calc((100vh - 200px) * 1.82)); margin-inline: auto; }
+}
+
+/* Homer AI section: rules stacked next to a smaller before → after */
+@media (min-width: 1024px) {
+  .ai-layout { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; margin-top: 40px; }
+  .ai-layout .ai-rules { grid-template-columns: 1fr; gap: 12px; }
+  .ai-layout .before-after { margin-top: 0; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); }
 }
