@@ -1872,3 +1872,63 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 .stats--stack .stat__num { font-size: clamp(40px, 3.9vw, 56px); }
 @media (min-width: 768px) { .stats.stats--stack { grid-template-columns: 1fr; gap: 16px; } }
 @media (min-width: 1024px) { .cooccur__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
+/* Homer: "Warm meets smart" colour story under the audiences intro */
+.colour-story { max-width: 820px; }
+.colour-story > * + * { margin-top: 8px; }
+
+/* Homer hero: brand key visual (navy panel, tagline, dishwasher) */
+.homer-key { position: relative; overflow: hidden; display: grid; align-items: center; gap: 8px; padding: 32px 24px 0; background: #223D59; border-radius: var(--r-image); color: #fff; font-family: 'Poppins', var(--font); }
+.homer-key__circle { position: absolute; border-radius: 50%; }
+.homer-key__circle--teal { width: 120px; height: 120px; right: -44px; top: -64px; background: #57A99A; }
+.homer-key__circle--amber { width: 34px; height: 34px; right: 10px; top: 14px; background: #F0A501; z-index: 1; }
+.homer-key__text { position: relative; z-index: 2; }
+.homer-key__text > * + * { margin-top: 12px; }
+.homer-key__label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: #77C9D4; }
+.homer-key__tagline { font-size: clamp(30px, 5vw, 72px); font-weight: 600; line-height: 1.05; letter-spacing: -.01em; }
+.homer-key__b2b { font-size: clamp(14px, 1.4vw, 20px); color: rgba(255, 255, 255, .85); }
+.hero-visual .homer-key__img { display: block; width: min(100%, 320px); margin: 0 auto; height: auto;
+  -webkit-mask-image: radial-gradient(closest-side, #000 75%, transparent); mask-image: radial-gradient(closest-side, #000 75%, transparent); }
+@media (min-width: 1024px) {
+  .homer-key { grid-template-columns: 1fr 1fr; min-height: 455px; padding: 0 0 0 72px; }
+  .homer-key__circle--teal { width: 300px; height: 300px; right: -90px; top: -110px; }
+  .homer-key__circle--amber { width: 110px; height: 110px; right: 40px; top: 150px; }
+  .homer-key__label { font-size: 14px; }
+  .homer-key__text > * + * { margin-top: 20px; }
+  .hero-visual .homer-key__img { width: auto; height: 440px; margin: 15px 0 0 0; align-self: end; }
+}
+.section--grey .tagline { background: var(--white); }
+
+/* Homer: Website + app section. Website scrolls inside its browser frame on desktop. */
+.web-app { display: grid; gap: 48px; align-items: start; }
+.web-app .homer-subhead { margin-top: 0; margin-bottom: 20px; }
+.web-app__web figcaption { margin-top: 12px; }
+.browser__scroll:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.browser__hint { display: none; }
+@media (min-width: 1024px) {
+  .web-app { grid-template-columns: 716fr 594fr; gap: 18px; }
+  .web-app__app { position: sticky; top: 96px; }
+  .browser__scroll { max-height: 600px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .browser__hint { display: inline; }
+}
+
+/* Stylescape: whole image + caption fits in one desktop screen */
+@media (min-width: 1024px) {
+  .homer-figure--fit { max-width: min(100%, 960px, calc((100vh - 140px) * 16 / 9)); margin: 48px auto 0; }
+}
+/* LinkedIn pair: both posts + captions fit in one desktop screen */
+@media (min-width: 1024px) {
+  .linkedin-row { max-width: min(100%, 1152px, calc((100vh - 200px) * 1.82)); margin-inline: auto; }
+}
+
+/* Homer AI section: rules stacked next to a smaller before → after */
+@media (min-width: 1024px) {
+  .ai-layout { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; margin-top: 40px; }
+  .ai-layout .ai-rules { grid-template-columns: 1fr; gap: 12px; }
+  .ai-layout .before-after { margin-top: 0; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); }
+}
+
+/* Homer: What I learned as a light numbered list, not tall empty cards */
+.learned-list .card { background: none; border: 0; border-top: 2px solid var(--accent); border-radius: 0; padding: 16px 0 0; }
+.learned-list .card > * + * { margin-top: 8px; }
+.learned-next { margin-top: 32px; max-width: 820px; }
+@media (min-width: 1024px) { .learned-list { gap: 48px; } }
