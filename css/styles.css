@@ -1848,3 +1848,8 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
   .browser__scroll { max-height: 600px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
   .browser__hint { display: inline; }
 }
+
+/* Stylescape: whole image + caption fits in one desktop screen */
+@media (min-width: 1024px) {
+  .homer-figure--fit { max-width: min(100%, 1152px, calc((100vh - 140px) * 16 / 9)); margin: 48px auto 0; }
+}
