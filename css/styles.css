@@ -1809,3 +1809,18 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 
 /* About story: translator lead (moved from the homepage) */
 .story__lead strong { font-weight: 500; color: var(--ink, inherit); }
+
+/* Section heads on desktop: intro sits next to the heading, so the width is used */
+@media (min-width: 1024px) {
+  .section-head:has(> h2 + p) { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 64px; align-items: end; }
+  .section-head:has(> h2 + p) > * { grid-column: 1 / -1; }
+  .section-head:has(> h2 + p) > h2 { grid-column: 1; }
+  .section-head:has(> h2 + p) > h2 + p { grid-column: 2; margin-top: 0; max-width: none !important; }
+  .section-head:has(> h2 + p) > .colour-story { grid-column: 2; }
+}
+
+/* MyMaria testing: its before/after cards must not use Homer's image layout */
+.testing-grid > .before-after { margin-top: 0; align-items: stretch; }
+@media (min-width: 640px) {
+  .testing-grid > .before-after { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+}
