@@ -41,20 +41,20 @@
   --mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
   /* Type scale — mobile values first, desktop values reached at 1440px */
-  --t-hero: clamp(56px, 9.93vw, 143px);     /* Display / Hero 143 */
-  --t-numeral: clamp(56px, 6.67vw, 96px);   /* Numeral 96 */
-  --t-page: clamp(40px, 5.56vw, 80px);      /* Page title 80 */
-  --t-h1: clamp(40px, 3.9vw, 56px);         /* H1 56 */
-  --t-h2: clamp(30px, 3.34vw, 48px);        /* H2 48 */
-  --t-h3: clamp(30px, 2.78vw, 40px);        /* H3 40 */
-  --t-h4: clamp(24px, 2.09vw, 30px);        /* H4 30 */
-  --t-h5: clamp(22px, 1.67vw, 24px);        /* H5 24 */
-  --t-h6: 20px;                             /* H6 20 */
-  --t-quote-l: clamp(24px, 2.64vw, 38px);   /* Quote L 38 */
-  --t-quote-m: clamp(22px, 1.875vw, 27px);  /* Quote M 27 */
-  --t-quote-s: 22px;                        /* Quote S 22 */
-  --t-body-xl: clamp(18px, 1.39vw, 20px);   /* Body XL 20 */
-  --t-body-l: 18px;
+  --t-hero: clamp(56px, 8.33vw, 120px);     /* Display / Hero 120 */
+  --t-numeral: clamp(48px, 5.56vw, 80px);   /* Numeral 80 */
+  --t-page: clamp(40px, 4.44vw, 64px);      /* Page title 64 */
+  --t-h1: clamp(36px, 3.33vw, 48px);        /* H1 48 */
+  --t-h2: clamp(28px, 2.78vw, 40px);        /* H2 40 */
+  --t-h3: clamp(26px, 2.22vw, 32px);        /* H3 32 */
+  --t-h4: clamp(22px, 1.81vw, 26px);        /* H4 26 */
+  --t-h5: clamp(20px, 1.53vw, 22px);        /* H5 22 */
+  --t-h6: 18px;                             /* H6 18 */
+  --t-quote-l: clamp(22px, 2.22vw, 32px);   /* Quote L 32 */
+  --t-quote-m: clamp(20px, 1.67vw, 24px);   /* Quote M 24 */
+  --t-quote-s: 20px;                        /* Quote S 20 */
+  --t-body-xl: clamp(17px, 1.25vw, 18px);   /* Body XL 18 */
+  --t-body-l: 17px;
   --t-body-m: 17px;
   --t-body: 16px;
   --t-small: 14px;
@@ -1852,4 +1852,15 @@ html:not(.js-anim) .timeline__line::after { transform: scaleX(1); }   /* static 
 @media (min-width: 1024px) {
   .journey-intro .section-head:has(> h2 + p) { display: block; }
   .journey-intro .section-head:has(> h2 + p) > h2 + p { margin-top: 24px; }
+}
+
+/* MyMaria design application: two examples side by side, smaller phones */
+.feature-pair { display: grid; gap: 24px; margin-top: 24px; }
+.feature-pair .feature + .feature { margin-top: 0; }
+@media (min-width: 1024px) {
+  .feature-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fit-mm .feature-pair .feature, .fit-mm .feature-pair .feature--flip { grid-template-columns: 200px minmax(0, 1fr) !important; gap: 32px; padding: 28px 32px; align-items: start; }
+  .fit-mm .feature-pair .feature .phone { max-width: 200px; order: -1; }
+  .fit-mm .feature--teacch { grid-template-columns: minmax(0, 650px) 240px; padding: 24px 48px; }
+  .fit-mm .annotated { max-width: 240px; }
 }
